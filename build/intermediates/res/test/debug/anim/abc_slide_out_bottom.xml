@@ -16,4 +16,4 @@
 <translate xmlns:android="http://schemas.android.com/apk/res/android"
            android:interpolator="@android:anim/accelerate_interpolator"
            android:fromYDelta="0" android:toYDelta="50%p"
-           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_bottom.xml -->
+           android:duration="@android:integer/config_mediumAnimTime"/><!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/anim/abc_slide_out_bottom.xml -->

@@ -1478,12 +1478,19 @@ containing a value of this type.
         public static final int home=0x7f080005;
         public static final int homeAsUp=0x7f08000e;
         public static final int icon=0x7f080027;
+<<<<<<< HEAD
         public static final int id_date_cell_container=0x7f080042;
         public static final int id_date_cell_mark_bar=0x7f080045;
         public static final int id_date_cell_text_container=0x7f080043;
         public static final int id_date_cell_textview=0x7f080044;
         public static final int id_textview_title_month=0x7f080041;
         public static final int id_textview_title_year=0x7f080040;
+=======
+        public static final int id_date_cell_container=0x7f080040;
+        public static final int id_date_cell_mark_bar=0x7f080043;
+        public static final int id_date_cell_text_container=0x7f080041;
+        public static final int id_date_cell_textview=0x7f080042;
+>>>>>>> origin/master
         public static final int ifRoom=0x7f080019;
         public static final int image=0x7f080024;
         public static final int listMode=0x7f08000a;

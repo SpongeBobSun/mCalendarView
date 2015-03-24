@@ -510,12 +510,19 @@ int id expanded_menu 0x7f080029
 int id home 0x7f080005
 int id homeAsUp 0x7f08000e
 int id icon 0x7f080027
+<<<<<<< HEAD
 int id id_date_cell_container 0x7f080042
 int id id_date_cell_mark_bar 0x7f080045
 int id id_date_cell_text_container 0x7f080043
 int id id_date_cell_textview 0x7f080044
 int id id_textview_title_month 0x7f080041
 int id id_textview_title_year 0x7f080040
+=======
+int id id_date_cell_container 0x7f080040
+int id id_date_cell_mark_bar 0x7f080043
+int id id_date_cell_text_container 0x7f080041
+int id id_date_cell_textview 0x7f080042
+>>>>>>> origin/master
 int id ifRoom 0x7f080019
 int id image 0x7f080024
 int id listMode 0x7f08000a
