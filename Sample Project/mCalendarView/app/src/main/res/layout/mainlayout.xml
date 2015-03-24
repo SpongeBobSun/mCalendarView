@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <sun.bob.simplecalendarview.mCalendarView
+    android:layout_height="match_parent"
+    android:id="@+id/id_main_container">
+    <!--<sun.bob.simplecalendarview.mCalendarView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/id_test_calendar_view"
+        /> -->
+    <!--
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="sun.bob.simplecalendarview.mCalendarFragment"
+        android:id="@+id/id_calendar_fragment"
+        android:layout_gravity="center_horizontal" />
+        -->
+    <sun.bob.simplecalendarview.mCalendarWidget
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         />
-</LinearLayout>
+</FrameLayout>

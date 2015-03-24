@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -18,20 +18,20 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="aliceblue">#F0F8FF</color>
     <color name="antiquewhite">#FAEBD7</color>
     <color name="aqua">#00FFFF</color>
     <color name="aquamarine">#7FFFD4</color>
     <color name="azure">#F0FFFF</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="background_floating_material_dark">#ff424242</color>
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="beige">#F5F5DC</color>
     <color name="bisque">#FFE4C4</color>
@@ -39,7 +39,7 @@
     <color name="blanchedalmond">#FFEBCD</color>
     <color name="blue">#0000FF</color>
     <color name="blueviolet">#8A2BE2</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -47,15 +47,15 @@
     <color name="bright_foreground_inverse_material_light">@color/bright_foreground_material_dark</color>
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="brown">#A52A2A</color>
     <color name="burlywood">#DEB887</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="cadetblue">#5F9EA0</color>
     <color name="chartreuse">#7FFF00</color>
@@ -86,13 +86,13 @@
     <color name="darkviolet">#9400D3</color>
     <color name="deeppink">#FF1493</color>
     <color name="deepskyblue">#00BFFF</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="dimgray">#696969</color>
     <color name="dimgrey">#696969</color>
@@ -109,13 +109,13 @@
     <color name="green">#008000</color>
     <color name="greenyellow">#ADFF2F</color>
     <color name="grey">#808080</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="honeydew">#F0FFF0</color>
     <color name="hotpink">#FF69B4</color>
@@ -145,22 +145,22 @@
     <color name="lime">#00FF00</color>
     <color name="limegreen">#32CD32</color>
     <color name="linen">#FAF0E6</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="link_text_material_dark">@color/material_deep_teal_200</color>
     <color name="link_text_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="magenta">#FF00FF</color>
     <color name="maroon">#800000</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="mediumaquamarine">#66CDAA</color>
     <color name="mediumblue">#0000CD</color>
@@ -193,7 +193,7 @@
     <color name="pink">#FFC0CB</color>
     <color name="plum">#DDA0DD</color>
     <color name="powderblue">#B0E0E6</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
@@ -203,15 +203,15 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="purple">#800080</color>
     <color name="red">#FF0000</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#40ffffff</color>
     <color name="ripple_material_light">#40000000</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="rosybrown">#BC8F8F</color>
     <color name="royalblue">#4169E1</color>
@@ -220,13 +220,13 @@
     <color name="sandybrown">#F4A460</color>
     <color name="seagreen">#2E8B57</color>
     <color name="seashell">#FFF5EE</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="sienna">#A0522D</color>
     <color name="silver">#C0C0C0</color>
@@ -237,11 +237,11 @@
     <color name="snow">#FFFAFA</color>
     <color name="springgreen">#00FF7F</color>
     <color name="steelblue">#4682B4</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="tan">#D2B48C</color>
     <color name="teal">#008080</color>
@@ -276,7 +276,7 @@
     <declare-styleable name="Toolbar"><attr format="reference" name="titleTextAppearance"/><attr format="reference" name="subtitleTextAppearance"/><attr name="title"/><attr name="subtitle"/><attr name="android:gravity"/><attr format="dimension" name="titleMargins"/><attr format="dimension" name="titleMarginStart"/><attr format="dimension" name="titleMarginEnd"/><attr format="dimension" name="titleMarginTop"/><attr format="dimension" name="titleMarginBottom"/><attr name="contentInsetStart"/><attr name="contentInsetEnd"/><attr name="contentInsetLeft"/><attr name="contentInsetRight"/><attr format="dimension" name="maxButtonHeight"/><attr format="reference" name="theme"/><attr format="reference" name="collapseIcon"/><attr format="string" name="collapseContentDescription"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_material">4dp</dimen>
@@ -325,6 +325,11 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="calendarViewPager" type="id"/>
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
@@ -347,10 +352,10 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">mCalendarView</string>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">
         <item name="android:textColor">?android:textColorPrimary</item>

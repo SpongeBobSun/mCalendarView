@@ -9,7 +9,7 @@ public class mDateData {
     private boolean isMarked;
     private int MarkColor;
     private int MarkStyle;
-
+    private int Month;
     public mDateData(int day){
         if(day == 0){
             setBlank();
@@ -53,5 +53,11 @@ public class mDateData {
         isMarked = true;
         MarkColor = color;
         MarkStyle = style;
+    }
+    public void setMonth(int month){
+        this.Month = month;
+    }
+    public int getMonth(){
+        return this.Month;
     }
 }

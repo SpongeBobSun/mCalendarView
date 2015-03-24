@@ -20,8 +20,10 @@ import sun.bob.mcalendarview.R;
 public class mCalendarAdapter extends ArrayAdapter<mDateData> {
     ArrayList<mDateData> dateDatas;
     private int cellSize;
+    private mMonthData monthData;
     public mCalendarAdapter(Context context, int resource,ArrayList<mDateData> arrayList) {
         super(context, resource, arrayList);
+//        monthData = new mMonthData(context);
         dateDatas = arrayList;
         getDefaultcellSize();
     }
@@ -33,7 +35,8 @@ public class mCalendarAdapter extends ArrayAdapter<mDateData> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        ArrayList<mDateData> list = mMonthData.getInstance(getContext()).getArray();
+//        ArrayList<mDateData> list = mMonthData.getInstance(getContext()).getArray();_
+        ArrayList<mDateData> list = monthData.getArray();
         View retView;
         retView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.date_cell,null);
         TextView textView = (TextView)retView.findViewById(R.id.id_date_cell_textview);
@@ -52,7 +55,7 @@ public class mCalendarAdapter extends ArrayAdapter<mDateData> {
         }else{
             textView.setText(String.format("%d",dateData.getDay()));
         }
-        textView.setTextSize(cellSize/2);
+        textView.setTextSize(cellSize/3);
         if(dateData.isMarked()){
             View view = retView.findViewById(R.id.id_date_cell_mark_bar);
             view.setBackgroundColor(dateData.getMarkColor());
@@ -60,4 +63,9 @@ public class mCalendarAdapter extends ArrayAdapter<mDateData> {
         retView.setLayoutParams(new GridView.LayoutParams(cellSize,cellSize));
         return retView;
     }
+
+    public mMonthData getMonthData() {
+        return monthData;
+    }
+    public void setMonthData(mMonthData monthData){this.monthData = monthData;}
 }

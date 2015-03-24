@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="aliceblue">#F0F8FF</color>
     <color name="antiquewhite">#FAEBD7</color>
@@ -148,7 +148,10 @@
     <color name="white">#FFFFFF</color>
     <color name="whitesmoke">#F5F5F5</color>
     <color name="yellow">#FFFF00</color>
-    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="calendarViewPager" type="id"/>
+    <!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">mCalendarView</string>
 </resources>

@@ -22,4 +22,4 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         style="?attr/actionModeStyle"/>
-<!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_bar.xml -->
+<!-- From: file:/C:/Users/bob.sun/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/layout/abc_action_mode_bar.xml -->

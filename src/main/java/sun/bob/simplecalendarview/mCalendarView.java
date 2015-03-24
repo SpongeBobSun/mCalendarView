@@ -12,14 +12,18 @@ public class mCalendarView extends GridView{
     private mCalendarAdapter adapter;
     public mCalendarView(Context context) {
         super(context);
+//        monthData = new mMonthData(context);
+    }
+    public void setMonthData(mMonthData monthData){
+        this.monthData = monthData;
+        adapter = new mCalendarAdapter(getContext(),android.R.layout.simple_list_item_1,monthData.getArray());
+        adapter.setMonthData(this.monthData);
+        this.setAdapter(adapter);
+        this.setNumColumns(7);
     }
 
     public mCalendarView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        monthData = mMonthData.getInstance(context);
-        adapter = new mCalendarAdapter(context,android.R.layout.simple_list_item_1,monthData.getArray());
-        this.setAdapter(adapter);
-        this.setNumColumns(7);
     }
     public void markDay(int day, int markColor, int markStyle){
         monthData.markDay(day,getResources().getColor(markColor),markStyle);
@@ -28,4 +32,9 @@ public class mCalendarView extends GridView{
     public void setOnDateClickListener(OnItemClickListener clickListener){
         this.setOnItemClickListener(clickListener);
     }
+
+    public mCalendarAdapter getCalendarAdapter(){
+        return adapter;
+    }
+
 }
