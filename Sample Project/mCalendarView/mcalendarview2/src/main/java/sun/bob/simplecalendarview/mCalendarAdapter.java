@@ -2,6 +2,7 @@ package sun.bob.simplecalendarview;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,14 @@ import sun.bob.mcalendarview.R;
 public class mCalendarAdapter extends ArrayAdapter<mDateData> {
     ArrayList<mDateData> dateDatas;
     private int cellSize;
+    private mMonthData monthData;
+    LinearLayout.LayoutParams cellParams;
     public mCalendarAdapter(Context context, int resource,ArrayList<mDateData> arrayList) {
         super(context, resource, arrayList);
+//        monthData = new mMonthData(context);
         dateDatas = arrayList;
         getDefaultcellSize();
+        cellParams = new LinearLayout.LayoutParams(cellSize,cellSize);
     }
     private void getDefaultcellSize(){
         DisplayMetrics dm;
@@ -33,7 +38,8 @@ public class mCalendarAdapter extends ArrayAdapter<mDateData> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        ArrayList<mDateData> list = mMonthData.getInstance(getContext()).getArray();
+//        ArrayList<mDateData> list = mMonthData.getInstance(getContext()).getArray();_
+        ArrayList<mDateData> list = monthData.getArray();
         View retView;
         retView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.date_cell,null);
         TextView textView = (TextView)retView.findViewById(R.id.id_date_cell_textview);
@@ -52,12 +58,24 @@ public class mCalendarAdapter extends ArrayAdapter<mDateData> {
         }else{
             textView.setText(String.format("%d",dateData.getDay()));
         }
-        textView.setTextSize(cellSize/2);
+        if(dateData.getTextSize() == 1) {
+            textView.setTextSize(cellSize / 3);
+        }
+        if(dateData.getTextSize() == 0){
+            textView.setTextSize(cellSize / 5);
+            textView.setLayoutParams(cellParams);
+        }
+        textView.setTextColor(dateData.getTextColor());
         if(dateData.isMarked()){
             View view = retView.findViewById(R.id.id_date_cell_mark_bar);
             view.setBackgroundColor(dateData.getMarkColor());
         }
-        retView.setLayoutParams(new GridView.LayoutParams(cellSize,cellSize));
+//        retView.setLayoutParams(cellParams);
         return retView;
     }
+
+    public mMonthData getMonthData() {
+        return monthData;
+    }
+    public void setMonthData(mMonthData monthData){this.monthData = monthData;}
 }

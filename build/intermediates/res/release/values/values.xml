@@ -325,6 +325,11 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="calendarViewPager" type="id"/>
+    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>

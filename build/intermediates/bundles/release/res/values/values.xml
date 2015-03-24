@@ -148,6 +148,9 @@
     <color name="white">#FFFFFF</color>
     <color name="whitesmoke">#F5F5F5</color>
     <color name="yellow">#FFFF00</color>
+    <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="calendarViewPager" type="id"/>
     <!-- From: file:/Users/sunkuan/AndroidStudioProjects/mCalendarView/mcalendarview2/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">mCalendarView</string>

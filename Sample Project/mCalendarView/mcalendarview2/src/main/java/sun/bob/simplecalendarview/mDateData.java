@@ -9,6 +9,25 @@ public class mDateData {
     private boolean isMarked;
     private int MarkColor;
     private int MarkStyle;
+    private int Month;
+    private int textColor;
+    private int textSize;
+
+    public int getTextColor() {
+        return textColor;
+    }
+
+    public void setTextColor(int textColor) {
+        this.textColor = textColor;
+    }
+
+    public int getTextSize() {
+        return textSize;
+    }
+
+    public void setTextSize(int textSize) {
+        this.textSize = textSize;
+    }
 
     public mDateData(int day){
         if(day == 0){
@@ -53,5 +72,11 @@ public class mDateData {
         isMarked = true;
         MarkColor = color;
         MarkStyle = style;
+    }
+    public void setMonth(int month){
+        this.Month = month;
+    }
+    public int getMonth(){
+        return this.Month;
     }
 }
