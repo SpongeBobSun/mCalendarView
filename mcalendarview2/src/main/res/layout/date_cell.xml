@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/date_cell_border"
+    android:id="@+id/id_date_cell_container"
+    android:layout_margin="0px">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/id_date_cell_text_container">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="4.0"
+            android:text="1"
+            android:id="@+id/id_date_cell_textview"
+            android:gravity="center"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1.0"
+            android:id="@+id/id_date_cell_mark_bar"
+            android:layout_toRightOf="@id/id_date_cell_textview"
+            android:layout_margin="0px"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
