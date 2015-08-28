@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendarViewPager));
         calendarView.setOnDateClickListener(new OnDateClickListener() {
             @Override
-            public void onDateClick(DateData date) {
+            public void onDateClick(View view, DateData date) {
                 Toast.makeText(MainActivity.this, String.format("%d-%d", date.getMonth(), date.getDay()), Toast.LENGTH_SHORT).show();
             }
         });

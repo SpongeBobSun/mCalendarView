@@ -39,8 +39,6 @@ public class mCalendarView extends ViewPager {
         }
     }
 
-
-
     public mCalendarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         if (context instanceof FragmentActivity){

@@ -34,7 +34,7 @@ public abstract class BaseCellView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 if (BaseCellView.this.clickListener != null){
-                    BaseCellView.this.clickListener.onDateClick(date);
+                    BaseCellView.this.clickListener.onDateClick(BaseCellView.this, date);
                 }
             }
         });

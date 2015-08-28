@@ -60,7 +60,7 @@ public class MonthData {
                 continue;
             }
             if((i >= totalDay) && (i % 7 !=0)){
-                //// TODO: 15/8/28 May cause bug when date exceeds xxxx-12-31
+                //// TODO: 15/8/28 Maybe we should move those to class `Date`?
                 boolean happyNewYear = false;
                 int nextYear, nextMonth;
                 happyNewYear = date.getMonth() == 12;
@@ -87,9 +87,6 @@ public class MonthData {
     }
 
     public void travelTo(DateData date){
-//        monthArg -= 1;
-//        year = yearArg;
-//        month = monthArg;
         this.date = date;
         calendar = Calendar.getInstance();
         calendar.set(date.getYear(),date.getMonth() - 1,1);
@@ -97,22 +94,7 @@ public class MonthData {
         startDay = calendar.get(Calendar.DAY_OF_WEEK) - 1;
 
         initHeadToTail();
-/**
- *
-        Calendar tmpCal = Calendar.getInstance();
-        tmpCal.clear();
-        tmpCal.set(date., month, 1);
 
-        totalDay = totalDay + startDay;
-        if(month > 1) {
-            lastMonth = month - 1;
-            tmpCal.set(year, lastMonth, 1);
-        }else{
-            lastMonth = 11;
-            tmpCal.set(year-1,11,1);
-        }
-        lastMonthTotalDay = tmpCal.getActualMaximum(Calendar.DAY_OF_MONTH);
-*/
         content.clear();
         initArray();
     }

@@ -1,5 +1,7 @@
 package sun.bob.mcalendarview.listeners;
 
+import android.view.View;
+
 import sun.bob.mcalendarview.vo.DateData;
 
 /**
@@ -8,5 +10,5 @@ import sun.bob.mcalendarview.vo.DateData;
 public abstract class OnDateClickListener {
     public static OnDateClickListener instance;
 
-    public abstract void onDateClick(DateData date);
+    public abstract void onDateClick(View view,DateData date);
 }

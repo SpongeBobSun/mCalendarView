@@ -18,7 +18,6 @@ public abstract class OnMonthChangeListener implements ViewPager.OnPageChangeLis
     @Override
     public void onPageSelected(int position) {
         Log.wtf("OnPageSelected:", ""+position);
-        //// TODO: 15/8/28 To be tested.
         onMonthChange(CalendarUtil.position2Year(position), CalendarUtil.position2Month(position));
     }
 

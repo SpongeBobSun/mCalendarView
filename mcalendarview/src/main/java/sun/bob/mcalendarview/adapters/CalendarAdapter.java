@@ -36,12 +36,11 @@ public class CalendarAdapter extends ArrayAdapter {
 
     public View getView(int position, View convertView, ViewGroup viewGroup){
         View ret = null;
-        //// TODO: 15/8/28 Add mark date support.
+        //// TODO: 15/8/28 Add customize date cell here.
         if (cellView != null){
             cellView.setDisplayText(((DayData) data.get(position)).getText());
             ret = cellView;
         } else {
-            //// TODO: 15/8/28 Change TextView to DefaultCellView
             ret = new DefaultCellView(getContext());
             ((DefaultCellView) ret).setDisplayText(((DayData) data.get(position)).getText());
         }
