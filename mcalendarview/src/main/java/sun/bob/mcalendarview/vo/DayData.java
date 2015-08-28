@@ -32,4 +32,8 @@ public class DayData {
     public String getText(){
         return "" + date.getDay();
     }
+
+    public DateData getDate(){
+        return date;
+    }
 }

@@ -25,6 +25,7 @@ public class MonthFragment extends Fragment {
         this.monthData = monthData;
         this.cellView = cellView;
         this.markView = markView;
+        // TODO: 15/8/28 CellView & MarkView are here.
     }
 
     @Override

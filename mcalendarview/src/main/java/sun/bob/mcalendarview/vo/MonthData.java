@@ -35,7 +35,7 @@ public class MonthData {
         startDay = tmpCal.get(Calendar.DAY_OF_WEEK) - 1;
         totalDay = totalDay + startDay;
         if(date.getMonth() - 1 > 0) {
-            lastMonth = date.getMonth() - 2;
+            lastMonth = date.getMonth() - 1;
             tmpCal.set(date.getYear(), lastMonth, 1);
         }else{
             lastMonth = 12;
@@ -54,19 +54,22 @@ public class MonthData {
                 addDate = new DayData(new DateData(date.getYear(),
                                                     lastMonth,
                                                     lastMonthTotalDay - (startDay- i)+1));
-//                addDate = new DayData(lastMonthTotalDay - (startDay- i)+1);
-//                addDate.setMonth(lastMonth);
                 addDate.setTextColor(Color.GRAY);
                 addDate.setTextSize(0);
                 content.add(addDate);
                 continue;
             }
             if((i >= totalDay) && (i % 7 !=0)){
-                addDate = new DayData(new DateData(date.getYear(),
-                                                    date.getMonth(),
+                //// TODO: 15/8/28 May cause bug when date exceeds xxxx-12-31
+                boolean happyNewYear = false;
+                int nextYear, nextMonth;
+                happyNewYear = date.getMonth() == 12;
+                nextMonth = happyNewYear ? 1 : date.getMonth() + 1;
+                nextYear = happyNewYear ? date.getYear() + 1 : date.getYear();
+
+                addDate = new DayData(new DateData(nextYear,
+                                                    nextMonth,
                                                     i - totalDay + 1));
-//                addDate = new mDateData((i - totalDay )+1);
-//                addDate.setMonth(month+1);
                 addDate.setTextColor(Color.GRAY);
                 addDate.setTextSize(0);
                 content.add(addDate);
@@ -75,10 +78,8 @@ public class MonthData {
                 return;
             }
             addDate = new DayData(new DateData(date.getYear(),
-                                    date.getMonth() + 1,
+                                    date.getMonth(),
                                     i + 1 - startDay));
-//            addDate = new mDateData(i + 1 - startDay);
-//            addDate.setMonth(month);
             addDate.setTextColor(Color.BLACK);
             addDate.setTextSize(1);
             content.add(addDate);

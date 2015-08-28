@@ -10,6 +10,7 @@ import android.view.View;
 import java.util.Date;
 
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
+import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.vo.DateData;
@@ -125,8 +126,8 @@ public class mCalendarView extends ViewPager {
         return this;
     }
 
-    // TODO: 15/8/28
-    public mCalendarView setOnDateClickListener(){
+    public mCalendarView setOnDateClickListener(OnDateClickListener onDateClickListener){
+        OnDateClickListener.instance = onDateClickListener;
         return this;
     }
 }

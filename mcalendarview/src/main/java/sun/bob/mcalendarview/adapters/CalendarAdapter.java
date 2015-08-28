@@ -5,11 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.views.BaseMarkView;
+import sun.bob.mcalendarview.views.DefaultCellView;
+import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.DayData;
 
 /**
@@ -38,8 +42,12 @@ public class CalendarAdapter extends ArrayAdapter {
             ret = cellView;
         } else {
             //// TODO: 15/8/28 Change TextView to DefaultCellView
-            ret = new TextView(getContext());
-            ((TextView) ret).setText(((DayData) data.get(position)).getText());
+            ret = new DefaultCellView(getContext());
+            ((DefaultCellView) ret).setDisplayText(((DayData) data.get(position)).getText());
+        }
+        ((BaseCellView) ret).setDate(((DayData) data.get(position)).getDate());
+        if (OnDateClickListener.instance != null){
+            ((BaseCellView) ret).setOnDateClickListener(OnDateClickListener.instance);
         }
         return ret;
     }
