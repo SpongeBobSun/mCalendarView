@@ -37,4 +37,10 @@ public class DateData {
     public void setDay(int day) {
         this.day = day;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        DateData data = (DateData) o;
+        return  ((data.year == this.year) && (data.month == this.month) && (data.day != this.day));
+    }
 }

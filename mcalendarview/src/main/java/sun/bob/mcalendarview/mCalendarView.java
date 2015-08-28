@@ -10,8 +10,10 @@ import android.view.View;
 import java.util.Date;
 
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
+import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.vo.DateData;
+import sun.bob.mcalendarview.vo.MarkedDates;
 
 /**
  * Created by bob.sun on 15/8/27.
@@ -26,6 +28,7 @@ public class mCalendarView extends ViewPager {
     private boolean initted = false;
 
     private DateData currentDate;
+    private CalendarViewAdapter adapter;
 
 
     public mCalendarView(Context context) {
@@ -52,25 +55,44 @@ public class mCalendarView extends ViewPager {
         if (currentDate == null){
             currentDate = CurrentCalendar.getCurrentDateData();
         }
-        //Todo
-        //Will this cause trouble when archive this module to a JAR?
+        // TODO: 15/8/28 Will this cause trouble when achieved?
         if (this.getId() == View.NO_ID){
             this.setId(R.id.calendarViewPager);
         }
-        //Todo
-        //Make CalendarViewAdapter public accessable
-        this.setAdapter(new CalendarViewAdapter(activity.getSupportFragmentManager()).setDate(CurrentCalendar.getCurrentDateData()));
+        adapter = new CalendarViewAdapter(activity.getSupportFragmentManager()).setDate(currentDate);
+        this.setAdapter(adapter);
         this.setCurrentItem(500);
     }
 
+    //// TODO: 15/8/28 May cause trouble when invoked after inited
     public mCalendarView travelTo(DateData dateData){
         this.currentDate = dateData;
+
         return this;
     }
 
     public mCalendarView markDate(int year, int month, int day){
-
+        MarkedDates.getInstance().add(new DateData(year, month, day));
         return this;
+    }
+
+    public mCalendarView unMarkDate(int year, int month, int day){
+        MarkedDates.getInstance().remove(new DateData(year, month, day));
+        return this;
+    }
+
+    public mCalendarView markDate(DateData date){
+        MarkedDates.getInstance().add(date);
+        return this;
+    }
+
+    public mCalendarView unMarkDate(DateData date){
+        MarkedDates.getInstance().remove(date);
+        return this;
+    }
+
+    public MarkedDates getMarkedDates(){
+        return MarkedDates.getInstance();
     }
 
     public mCalendarView setDateCellViewResId(int resId){
@@ -95,6 +117,16 @@ public class mCalendarView extends ViewPager {
 
     public mCalendarView setMarkedCellView(View view){
 
+        return this;
+    }
+
+    public mCalendarView setOnMonthChangeListener(OnMonthChangeListener listener){
+        this.addOnPageChangeListener(listener);
+        return this;
+    }
+
+    // TODO: 15/8/28
+    public mCalendarView setOnDateClickListener(){
         return this;
     }
 }

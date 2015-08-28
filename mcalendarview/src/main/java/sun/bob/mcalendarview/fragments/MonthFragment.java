@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import sun.bob.mcalendarview.adapters.CalendarAdapter;
+import sun.bob.mcalendarview.views.BaseCellView;
+import sun.bob.mcalendarview.views.BaseMarkView;
 import sun.bob.mcalendarview.views.MonthView;
 import sun.bob.mcalendarview.vo.MonthData;
 
@@ -17,8 +19,12 @@ import sun.bob.mcalendarview.vo.MonthData;
  */
 public class MonthFragment extends Fragment {
     private MonthData monthData;
-    public void setData(MonthData monthData){
+    private BaseCellView cellView;
+    private BaseMarkView markView;
+    public void setData(MonthData monthData, BaseCellView cellView, BaseMarkView markView){
         this.monthData = monthData;
+        this.cellView = cellView;
+        this.markView = markView;
     }
 
     @Override
