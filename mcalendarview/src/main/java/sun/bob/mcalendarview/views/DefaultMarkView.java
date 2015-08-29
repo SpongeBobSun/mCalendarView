@@ -43,9 +43,9 @@ public class DefaultMarkView extends BaseMarkView {
 
         textView = new TextView(getContext());
         textView.setGravity(Gravity.CENTER);
+        matchParentParams = new AbsListView.LayoutParams(CellConfig.cellWidth, CellConfig.cellHeight);
         switch (MarkStyle.current){
             case MarkStyle.DEFAULT:
-                matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CellConfig.cellHeight);
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(HORIZONTAL);
                 textView.setTextColor(Color.WHITE);
@@ -57,7 +57,6 @@ public class DefaultMarkView extends BaseMarkView {
                 this.addView(textView);
                 return;
             case MarkStyle.BACKGROUND:
-                matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CellConfig.cellHeight);
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(HORIZONTAL);
                 textView.setTextColor(Color.WHITE);
@@ -69,7 +68,6 @@ public class DefaultMarkView extends BaseMarkView {
                 this.addView(textView);
                 return;
             case MarkStyle.DOT:
-                matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CellConfig.cellHeight);
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(VERTICAL);
                 textView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, (float) 1.0));
@@ -79,7 +77,6 @@ public class DefaultMarkView extends BaseMarkView {
                 this.addView(new Dot(getContext()));
                 return;
             case MarkStyle.RIGHTSIDEBAR:
-                matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CellConfig.cellHeight);
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(HORIZONTAL);
                 textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0));
@@ -88,9 +85,23 @@ public class DefaultMarkView extends BaseMarkView {
                 this.addView(new PlaceHolderHorizontal(getContext()));
                 this.addView(textView);
                 this.addView(new PlaceHolderHorizontal(getContext()));
-                PlaceHolderHorizontal bar = new PlaceHolderHorizontal(getContext());
-                bar.setBackgroundColor(MarkStyle.color);
-                this.addView(bar);
+                PlaceHolderHorizontal barRight = new PlaceHolderHorizontal(getContext());
+                barRight.setBackgroundColor(MarkStyle.color);
+                this.addView(barRight);
+                return;
+            case MarkStyle.LEFTSIDEBAR:
+                this.setLayoutParams(matchParentParams);
+                this.setOrientation(HORIZONTAL);
+                textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0));
+
+                PlaceHolderHorizontal barLeft = new PlaceHolderHorizontal(getContext());
+                barLeft.setBackgroundColor(MarkStyle.color);
+                this.addView(barLeft);
+                this.addView(new PlaceHolderHorizontal(getContext()));
+                this.addView(textView);
+                this.addView(new PlaceHolderHorizontal(getContext()));
+                this.addView(new PlaceHolderHorizontal(getContext()));
+
                 return;
             default:
                 throw new IllegalArgumentException("Invalid Mark Style Configuration!");

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendarViewPager));
+        mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
         calendarView.setOnDateClickListener(new OnDateClickListener() {
             @Override
             public void onDateClick(View view, DateData date) {
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //// TODO: 15/8/29 Use mCalendarView's built in function.
-        MarkStyle.current = MarkStyle.RIGHTSIDEBAR;
-        calendarView.travelTo(new DateData(1992, 5, 5));
+        MarkStyle.current = MarkStyle.LEFTSIDEBAR;
+//        calendarView.travelTo(new DateData(1992, 5, 5));
         calendarView.markDate(new DateData(2015, 8, 2));
         calendarView.markDate(new DateData(2015, 8, 3));
         calendarView.markDate(new DateData(2015, 10, 7));

@@ -8,6 +8,7 @@ import android.graphics.drawable.shapes.RectShape;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
@@ -148,9 +149,7 @@ public class mCalendarView extends ViewPager {
         width = measureWidth(measureWidthSpec);
         height = measureHeight(measureHeightSpec);
         this.setMeasuredDimension(width, height);
-//        if (getContext() instanceof FragmentActivity){
-//            init((FragmentActivity) getContext());
-//        }
+//        this.measureChildren(measureWidthSpec, measureHeightSpec);
     }
 
     private int measureWidth(int measureSpec) {
@@ -158,9 +157,13 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            result = getWidth();
+            //// TODO: 15/8/29 USE SIZE*DPI HERE!
+            // Equations are: (size * DisplayMetrics.destinyDPI) / DisplayMetrics.DENSITY_DEFAULT
+            result = CellConfig.cellWidth;
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
+        } else {
+            result = CellConfig.cellHeight;
         }
         return result;
     }
@@ -169,9 +172,11 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            result = getWidth();
+            result = CellConfig.cellHeight * 7;
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
+        } else {
+            result = CellConfig.cellHeight;
         }
         return result;
     }

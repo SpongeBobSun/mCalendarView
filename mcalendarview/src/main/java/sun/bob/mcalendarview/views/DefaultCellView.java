@@ -26,7 +26,7 @@ public class DefaultCellView extends BaseCellView {
     }
 
     private void initLayout(){
-        matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CellConfig.cellHeight);
+        matchParentParams = new AbsListView.LayoutParams(CellConfig.cellWidth, CellConfig.cellHeight);
         this.setLayoutParams(matchParentParams);
         this.setOrientation(VERTICAL);
         textView = new TextView(getContext());
@@ -38,5 +38,10 @@ public class DefaultCellView extends BaseCellView {
     @Override
     public void setDisplayText(String text) {
         textView.setText(text);
+    }
+
+    @Override
+    protected void onMeasure(int measureWidthSpec,int measureHeightSpec){
+        super.onMeasure(measureWidthSpec, measureHeightSpec);
     }
 }

@@ -7,15 +7,16 @@
     <sun.bob.mcalendarview.mCalendarView
         android:layout_width="400dp"
         android:layout_height="400dp"
-        tools:context=".MainActivity"/>
+        tools:context=".MainActivity"
+        />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0"
         android:id="@+id/id_framgelayout">
-        <TextView
+        <sun.bob.mcalendarview.mCalendarView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="what?"/>
+            android:id="@+id/calendar"/>
     </FrameLayout>
 </LinearLayout>
