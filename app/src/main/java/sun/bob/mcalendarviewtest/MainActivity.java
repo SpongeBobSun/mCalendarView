@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import sun.bob.mcalendarview.MarkStyle;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.mCalendarView;
@@ -31,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, String.format("%d-%d", year, month), Toast.LENGTH_SHORT).show();
             }
         });
+        //// TODO: 15/8/29 Use mCalendarView's built in function.
+        MarkStyle.current = MarkStyle.RIGHTSIDEBAR;
+        calendarView.travelTo(new DateData(1992, 5, 5));
+        calendarView.markDate(new DateData(2015, 8, 2));
+        calendarView.markDate(new DateData(2015, 8, 3));
+        calendarView.markDate(new DateData(2015, 10, 7));
+
+//        ((FrameLayout) findViewById(R.id.id_framgelayout)).addView(new mCalendarView(this));
+
     }
 
     @Override

@@ -2,14 +2,19 @@ package sun.bob.mcalendarview.utils;
 
 import java.util.Calendar;
 
+import sun.bob.mcalendarview.vo.DateData;
+
 /**
  * Created by bob.sun on 15/8/27.
  */
 public class CalendarUtil {
+    public static DateData date = CurrentCalendar.getCurrentDateData();
+
     public static int position2Year(int pos){
         int tmpYear,tmpMonth;
         Calendar c = Calendar.getInstance();
-        tmpYear = c.get(Calendar.YEAR);
+//        tmpYear = c.get(Calendar.YEAR);
+        tmpYear = date.getYear();
         tmpMonth = CalendarUtil.position2Month(pos);
         int ret;
         if(pos == 500){
@@ -17,7 +22,8 @@ public class CalendarUtil {
         }
         if(pos > 500){
 
-            ret = tmpYear + ((pos - 500) + c.get(Calendar.MONTH))/12;
+//            ret = tmpYear + ((pos - 500) + c.get(Calendar.MONTH))/12;
+            ret = tmpYear + ((pos - 500) + date.getMonth() - 1)/12;
 
         }else{
             ret =  tmpYear - ((500 - pos)+tmpMonth)/12;
@@ -28,7 +34,8 @@ public class CalendarUtil {
     public static int position2Month(int pos){
         int tmpMonth;
         Calendar c = Calendar.getInstance();
-        tmpMonth = c.get(Calendar.MONTH) + 1;
+//        tmpMonth = c.get(Calendar.MONTH) + 1;
+        tmpMonth = date.getMonth();
         int ret;
         if(pos == 500){
             return tmpMonth;

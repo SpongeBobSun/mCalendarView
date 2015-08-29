@@ -35,7 +35,7 @@ public class MonthData {
         startDay = tmpCal.get(Calendar.DAY_OF_WEEK) - 1;
         totalDay = totalDay + startDay;
         if(date.getMonth() - 1 > 0) {
-            lastMonth = date.getMonth() - 1;
+            lastMonth = date.getMonth() - 2;
             tmpCal.set(date.getYear(), lastMonth, 1);
         }else{
             lastMonth = 12;

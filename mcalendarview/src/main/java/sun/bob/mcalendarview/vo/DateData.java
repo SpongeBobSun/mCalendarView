@@ -41,6 +41,6 @@ public class DateData {
     @Override
     public boolean equals(Object o) {
         DateData data = (DateData) o;
-        return  ((data.year == this.year) && (data.month == this.month) && (data.day != this.day));
+        return  ((data.year == this.year) && (data.month == this.month) && (data.day == this.day));
     }
 }

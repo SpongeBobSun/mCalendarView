@@ -2,9 +2,12 @@ package sun.bob.mcalendarview.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.TextView;
+
+import sun.bob.mcalendarview.CellConfig;
 
 /**
  * Created by bob.sun on 15/8/28.
@@ -23,10 +26,12 @@ public class DefaultCellView extends BaseCellView {
     }
 
     private void initLayout(){
-        matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        matchParentParams = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, CellConfig.cellHeight);
         this.setLayoutParams(matchParentParams);
         this.setOrientation(VERTICAL);
         textView = new TextView(getContext());
+        textView.setGravity(Gravity.CENTER);
+        textView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, (float) 1.0));
         this.addView(textView);
     }
 

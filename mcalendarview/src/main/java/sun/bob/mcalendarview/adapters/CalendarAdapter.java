@@ -13,8 +13,10 @@ import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.views.BaseMarkView;
 import sun.bob.mcalendarview.views.DefaultCellView;
+import sun.bob.mcalendarview.views.DefaultMarkView;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.DayData;
+import sun.bob.mcalendarview.vo.MarkedDates;
 
 /**
  * Created by bob.sun on 15/8/27.
@@ -36,18 +38,29 @@ public class CalendarAdapter extends ArrayAdapter {
 
     public View getView(int position, View convertView, ViewGroup viewGroup){
         View ret = null;
-        //// TODO: 15/8/28 Add customize date cell here.
-        if (cellView != null){
-            cellView.setDisplayText(((DayData) data.get(position)).getText());
-            ret = cellView;
+        DayData dayData = (DayData) data.get(position);
+        if (MarkedDates.getInstance().check(dayData.getDate())){
+            if (markView != null){
+                markView.setDisplayText(dayData.getText());
+                ret = markView;
+            } else {
+                ret = new DefaultMarkView(getContext());
+                ((DefaultMarkView) ret).setDisplayText(dayData.getText());
+            }
         } else {
-            ret = new DefaultCellView(getContext());
-            ((DefaultCellView) ret).setDisplayText(((DayData) data.get(position)).getText());
+            //// TODO: 15/8/28 Add customize date cell here.
+            if (cellView != null) {
+                cellView.setDisplayText(dayData.getText());
+                ret = cellView;
+            } else {
+                ret = new DefaultCellView(getContext());
+                ((DefaultCellView) ret).setDisplayText(dayData.getText());
+            }
         }
-        ((BaseCellView) ret).setDate(((DayData) data.get(position)).getDate());
-        if (OnDateClickListener.instance != null){
-            ((BaseCellView) ret).setOnDateClickListener(OnDateClickListener.instance);
-        }
+            ((BaseCellView) ret).setDate(dayData.getDate());
+            if (OnDateClickListener.instance != null) {
+                ((BaseCellView) ret).setOnDateClickListener(OnDateClickListener.instance);
+            }
         return ret;
     }
 

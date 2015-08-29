@@ -1,17 +1,19 @@
 package sun.bob.mcalendarview;
 
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.Date;
-
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
+import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MarkedDates;
@@ -31,6 +33,7 @@ public class mCalendarView extends ViewPager {
     private DateData currentDate;
     private CalendarViewAdapter adapter;
 
+    private int width, height;
 
     public mCalendarView(Context context) {
         super(context);
@@ -61,12 +64,22 @@ public class mCalendarView extends ViewPager {
         adapter = new CalendarViewAdapter(activity.getSupportFragmentManager()).setDate(currentDate);
         this.setAdapter(adapter);
         this.setCurrentItem(500);
+        addBackground();
+    }
+
+    private void addBackground(){
+        ShapeDrawable drawable = new ShapeDrawable(new RectShape());
+        drawable.getPaint().setColor(Color.LTGRAY);
+        drawable.getPaint().setStyle(Paint.Style.STROKE);
+        this.setBackground(drawable);
     }
 
     //// TODO: 15/8/28 May cause trouble when invoked after inited
     public mCalendarView travelTo(DateData dateData){
         this.currentDate = dateData;
-
+        CalendarUtil.date = dateData;
+        this.initted = false;
+        init((FragmentActivity) getContext());
         return this;
     }
 
@@ -127,5 +140,39 @@ public class mCalendarView extends ViewPager {
     public mCalendarView setOnDateClickListener(OnDateClickListener onDateClickListener){
         OnDateClickListener.instance = onDateClickListener;
         return this;
+    }
+
+    @Override
+    protected void onMeasure(int measureWidthSpec,int measureHeightSpec){
+        super.onMeasure(measureWidthSpec, measureHeightSpec);
+        width = measureWidth(measureWidthSpec);
+        height = measureHeight(measureHeightSpec);
+        this.setMeasuredDimension(width, height);
+//        if (getContext() instanceof FragmentActivity){
+//            init((FragmentActivity) getContext());
+//        }
+    }
+
+    private int measureWidth(int measureSpec) {
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        int result = 0;
+        if (specMode == MeasureSpec.AT_MOST) {
+            result = getWidth();
+        } else if (specMode == MeasureSpec.EXACTLY) {
+            result = specSize;
+        }
+        return result;
+    }
+    private int measureHeight(int measureSpec) {
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        int result = 0;
+        if (specMode == MeasureSpec.AT_MOST) {
+            result = getWidth();
+        } else if (specMode == MeasureSpec.EXACTLY) {
+            result = specSize;
+        }
+        return result;
     }
 }
