@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sun.bob.mcalendarviewtest.DateCellView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:background="#00ADA3">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#FFFFFF"
+        android:id="@+id/id_cell_text"/>
+</sun.bob.mcalendarviewtest.DateCellView>

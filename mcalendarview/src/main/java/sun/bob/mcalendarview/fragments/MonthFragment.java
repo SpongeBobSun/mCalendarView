@@ -2,6 +2,7 @@ package sun.bob.mcalendarview.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,24 +20,25 @@ import sun.bob.mcalendarview.vo.MonthData;
  */
 public class MonthFragment extends Fragment {
     private MonthData monthData;
-    private BaseCellView cellView;
-    private BaseMarkView markView;
-    public void setData(MonthData monthData, BaseCellView cellView, BaseMarkView markView){
+    private int cellView = -1;
+    private int markView = -1;
+    public void setData(MonthData monthData, int cellView, int markView){
         this.monthData = monthData;
         this.cellView = cellView;
         this.markView = markView;
-        // TODO: 15/8/28 CellView & MarkView are here.
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
         LinearLayout ret = new LinearLayout(getContext());
         ret.setOrientation(LinearLayout.VERTICAL);
+        ret.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        ret.setGravity(Gravity.CENTER);
         TextView textView = new TextView(getContext());
-        textView.setText("" + monthData.getDate().getMonth());
+        textView.setText(String.format("%d-%d", monthData.getDate().getYear(), monthData.getDate().getMonth()));
         ret.addView(textView);
         MonthView monthView = new MonthView(getContext());
-        monthView.setAdapter(new CalendarAdapter(getContext(), 1, monthData.getData()));
+        monthView.setAdapter(new CalendarAdapter(getContext(), 1, monthData.getData()).setCellViews(cellView, markView));
         ret.addView(monthView);
         return ret;
     }

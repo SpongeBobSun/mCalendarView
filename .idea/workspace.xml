@@ -4,6 +4,13 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_date_cell.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value=".java" />
@@ -11,15 +18,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62dd3d4-a62d-47b0-baed-f0e039b77819" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/DateCellView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MarkCellView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_date_cell.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_mark_cell.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/CellConfig.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/CellConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultCellView.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultCellView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -42,12 +53,93 @@
     <favorites_list name="mCalendarViewTest" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="106" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+              <folding>
+                <element signature="e#867#1138#0" expanded="true" />
+                <element signature="e#1137#1138#0" expanded="true" />
+                <element signature="e#1165#1416#0" expanded="true" />
+                <element signature="e#1415#1416#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mCalendarView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6412429">
+              <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonthData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="62" column="53" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MonthFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalendarAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalendarViewAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MarkCellView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MarkCellView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
+        <option value="layoutResourceFile_vertical" />
         <option value="Class" />
       </list>
     </option>
@@ -2226,29 +2318,33 @@
         <option value="$PROJECT_DIR$/mcalendarview/src/main/res/values/ids.xml" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/utils/CurrentCalendar.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/TitleData.java" />
-        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java" />
         <option value="/Developer/Android/sdk/sources/android-23/java/util/ArrayList.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MarkedDates.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseMarkView.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/MonthView.java" />
-        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/listeners/OnMonthChangeListener.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/listeners/OnDateClickListener.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseCellView.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/DayData.java" />
-        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/DateData.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/MarkStyle.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/utils/Constants.java" />
-        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/utils/CalendarUtil.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/CellConfig.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultCellView.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java" />
-        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/DateCellView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_date_cell.xml" />
+        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java" />
+        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MarkCellView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_mark_cell.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" />
+        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java" />
+        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java" />
+        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java" />
       </list>
     </option>
   </component>
@@ -2277,7 +2373,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -2289,38 +2385,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mCalendarViewTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mCalendarViewTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mCalendarView" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mCalendarViewTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2389,7 +2454,7 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vo" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2411,7 +2476,29 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="fragments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mCalendarViewTest" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcalendarview" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mcalendarview" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2491,6 +2578,37 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mCalendarViewTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mCalendarViewTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mCalendarView" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mCalendarViewTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2513,7 +2631,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="true" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.0.103:5555" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SBLib" />
   </component>
@@ -2744,7 +2862,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440841753471</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Overload some measure method.&#10;Will be back tomorrow.">
+      <created>1440860781508</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1440860781508</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2766,15 +2890,15 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32719547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32577905" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42634562" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58640224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45892352" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2706596" sideWeight="0.5057851" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32577905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32577905" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286119" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5028329" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2807,71 +2931,16 @@
     <MESSAGE value="Add several listeners and bug fix." />
     <MESSAGE value="Modify test project layout.&#10;Modify an abstract method." />
     <MESSAGE value="Big bug fix (22333)&#10;Add new mark styles (WOW)&#10;Starving &amp; going to have my dinner." />
-    <option name="LAST_COMMIT_MESSAGE" value="Big bug fix (22333)&#10;Add new mark styles (WOW)&#10;Starving &amp; going to have my dinner." />
+    <MESSAGE value="Overload some measure method.&#10;Will be back tomorrow." />
+    <option name="LAST_COMMIT_MESSAGE" value="Overload some measure method.&#10;Will be back tomorrow." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="75" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setDisplayText#0;class#DefaultMarkView#0" expanded="false" />
-            <element signature="class#PlaceHolderHorizontal#0;class#DefaultMarkView#0" expanded="false" />
-            <element signature="class#PlaceHolderVertical#0;class#DefaultMarkView#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/res/values/ids.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/utils/CurrentCalendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2880,13 +2949,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar:///Developer/Android/sdk/platforms/android-23/android.jar!/java/util/Calendar.class">
@@ -2987,13 +3056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/MonthView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28596187">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3005,13 +3067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.80818963">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46551725">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -3037,14 +3092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseCellView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5973451">
-          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/DayData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3052,17 +3099,6 @@
           <folding>
             <element signature="e#652#653#0" expanded="false" />
             <element signature="e#679#680#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
-          <folding>
-            <element signature="e#2355#2356#0" expanded="false" />
-            <element signature="e#2389#2390#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3128,14 +3164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/utils/CalendarUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11504425">
@@ -3143,14 +3171,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6238938">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3162,40 +3182,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="80" selection-start-line="23" selection-start-column="80" selection-end-line="23" selection-end-column="80" />
-          <folding>
-            <element signature="e#884#1155#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/CellConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2387268">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43913713">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Developer/Android/sdk/sources/android-23/android/widget/LinearLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.331565">
-          <caret line="627" column="19" selection-start-line="627" selection-start-column="19" selection-end-line="627" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -3232,18 +3222,170 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42477876">
-          <caret line="163" column="30" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0921659">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Developer/Android/sdk/sources/android-23/android/widget/LinearLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1780" column="16" selection-start-line="1780" selection-start-column="16" selection-end-line="1780" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/MonthView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28381962">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Developer/Android/sdk/sources/android-23/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5610687">
+          <caret line="1381" column="37" selection-start-line="1381" selection-start-column="37" selection-end-line="1381" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Developer/Android/sdk/sources/android-23/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5896947">
+          <caret line="369" column="25" selection-start-line="369" selection-start-column="25" selection-end-line="369" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseCellView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3148855">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66237944">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_date_cell.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6896553">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MarkCellView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/DateCellView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30973452">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_mark_cell.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1155624">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="106" selection-start-line="39" selection-start-column="106" selection-end-line="39" selection-end-column="106" />
+          <folding>
+            <element signature="e#867#1138#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1165#1416#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MonthData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="53" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/fragments/MonthFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/mCalendarView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6412429">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
           <folding />
         </state>
       </provider>

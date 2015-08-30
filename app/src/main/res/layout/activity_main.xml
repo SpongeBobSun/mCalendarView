@@ -2,21 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity="center">
 
     <sun.bob.mcalendarview.mCalendarView
         android:layout_width="400dp"
         android:layout_height="400dp"
         tools:context=".MainActivity"
+        android:id="@+id/calendar"
         />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.0"
-        android:id="@+id/id_framgelayout">
-        <sun.bob.mcalendarview.mCalendarView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/calendar"/>
-    </FrameLayout>
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1.0"-->
+        <!--android:id="@+id/id_framgelayout">-->
+        <!--<sun.bob.mcalendarview.mCalendarView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</FrameLayout>-->
 </LinearLayout>

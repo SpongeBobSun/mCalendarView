@@ -60,7 +60,7 @@ public class MonthData {
                 continue;
             }
             if((i >= totalDay) && (i % 7 !=0)){
-                //// TODO: 15/8/28 Maybe we should move those to class `Date`?
+                // Maybe move them to DateData class.
                 boolean happyNewYear = false;
                 int nextYear, nextMonth;
                 happyNewYear = date.getMonth() == 12;

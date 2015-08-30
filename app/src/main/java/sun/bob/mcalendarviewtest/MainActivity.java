@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import sun.bob.mcalendarview.MarkStyle;
@@ -21,30 +19,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//      Get instance.
         mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
+
+//      Set up listeners.
         calendarView.setOnDateClickListener(new OnDateClickListener() {
             @Override
             public void onDateClick(View view, DateData date) {
                 Toast.makeText(MainActivity.this, String.format("%d-%d", date.getMonth(), date.getDay()), Toast.LENGTH_SHORT).show();
             }
-        });
-        calendarView.setOnMonthChangeListener(new OnMonthChangeListener() {
+        }).setOnMonthChangeListener(new OnMonthChangeListener() {
             @Override
             public void onMonthChange(int year, int month) {
                 Toast.makeText(MainActivity.this, String.format("%d-%d", year, month), Toast.LENGTH_SHORT).show();
             }
-        });
-        //// TODO: 15/8/29 Use mCalendarView's built in function.
-        MarkStyle.current = MarkStyle.LEFTSIDEBAR;
-//        calendarView.travelTo(new DateData(1992, 5, 5));
-        calendarView.markDate(new DateData(2015, 8, 2));
-        calendarView.markDate(new DateData(2015, 8, 3));
-        calendarView.markDate(new DateData(2015, 10, 7));
+        }).setMarkedStyle(MarkStyle.DOT).markDate(new DateData(2015, 8, 20)).markDate(2015, 9, 1);
 
-//        ((FrameLayout) findViewById(R.id.id_framgelayout)).addView(new mCalendarView(this));
+//************************************************************************************************************
+//        Use default view.
+//        If you want to use customized cells, un-comment below line and modify `DateCellView`, `MarkCellView`.
+//************************************************************************************************************
+
+//        calendarView.setDateCell(R.layout.layout_date_cell).setMarkedCell(R.layout.layout_mark_cell);
 
     }
 
+//**********************************************************
+//  Generated codes, didn't modified, so you can ignore them.
+//**********************************************************
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

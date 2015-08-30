@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.LayoutInflater;
 import android.view.View;
 
 import sun.bob.mcalendarview.fragments.MonthFragment;
@@ -21,8 +20,8 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
 
     private DateData date;
 
-    private BaseCellView dateCell;
-    private BaseMarkView markCell;
+    private int dateCellId;
+    private int markCellId;
 
     private Context context;
 
@@ -39,29 +38,30 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
         this.context = context;
     }
 
-    public CalendarViewAdapter setDateCell(int dateCellRes){
-        if (context == null)
-            throw new NullPointerException("Context is null! Use `setContext` to set context please.");
-        this.dateCell = (BaseCellView) View.inflate(context, dateCellRes, null);
+    public CalendarViewAdapter setDateCellId(int dateCellRes){
+//        if (context == null)
+//            throw new NullPointerException("Context is null! Use `setContext` to set context please.");
+        this.dateCellId =  dateCellRes;
         return this;
     }
 
-    public CalendarViewAdapter setDateCell(BaseCellView dateCell){
-        this.dateCell = dateCell;
+//    public CalendarViewAdapter setDateCell(BaseCellView dateCell){
+//        this.dateCellId = dateCell;
+//        return this;
+//    }
+
+    public CalendarViewAdapter setMarkCellId(int markCellId){
+//        if (context == null)
+//            throw new NullPointerException("Context is null! Use `setContext` to set context please.");
+//        this.dateCellId = (BaseCellView) View.inflate(context, dateCellRes, null);
+        this.markCellId = markCellId;
         return this;
     }
 
-    public CalendarViewAdapter setMarkCell(int dateCellRes){
-        if (context == null)
-            throw new NullPointerException("Context is null! Use `setContext` to set context please.");
-        this.dateCell = (BaseCellView) View.inflate(context, dateCellRes, null);
-        return this;
-    }
-
-    public CalendarViewAdapter setMarkCell(BaseMarkView markCell){
-        this.markCell = markCell;
-        return this;
-    }
+//    public CalendarViewAdapter setMarkCell(BaseMarkView markCell){
+//        this.markCellId = markCell;
+//        return this;
+//    }
 
     @Override
     public Fragment getItem(int position) {
@@ -70,7 +70,7 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
 
         MonthFragment fragment = new MonthFragment();
         MonthData monthData = new MonthData(new DateData(year, month, date.getDay()));
-        fragment.setData(monthData, dateCell, markCell);
+        fragment.setData(monthData, dateCellId, markCellId);
         return fragment;
     }
     @Override

@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
@@ -23,14 +24,14 @@ import sun.bob.mcalendarview.vo.MarkedDates;
  */
 public class CalendarAdapter extends ArrayAdapter {
     private ArrayList data;
-    private BaseCellView cellView;
-    private BaseMarkView markView;
+    private int cellView = -1;
+    private int markView = -1;
     public CalendarAdapter(Context context, int resource, ArrayList data) {
         super(context, resource);
         this.data = data;
     }
 
-    public CalendarAdapter setCellViews(BaseCellView cellView, BaseMarkView markView){
+    public CalendarAdapter setCellViews(int cellView, int markView){
         this.cellView = cellView;
         this.markView = markView;
         return this;
@@ -40,18 +41,19 @@ public class CalendarAdapter extends ArrayAdapter {
         View ret = null;
         DayData dayData = (DayData) data.get(position);
         if (MarkedDates.getInstance().check(dayData.getDate())){
-            if (markView != null){
-                markView.setDisplayText(dayData.getText());
-                ret = markView;
+            if (markView > 0){
+                BaseMarkView baseMarkView = (BaseMarkView) View.inflate(getContext(), markView, null);
+                baseMarkView.setDisplayText(dayData.getText());
+                ret = baseMarkView;
             } else {
                 ret = new DefaultMarkView(getContext());
                 ((DefaultMarkView) ret).setDisplayText(dayData.getText());
             }
         } else {
-            //// TODO: 15/8/28 Add customize date cell here.
-            if (cellView != null) {
-                cellView.setDisplayText(dayData.getText());
-                ret = cellView;
+            if (cellView > 0) {
+                BaseCellView baseCellView = (BaseCellView) View.inflate(getContext(), cellView, null);
+                baseCellView.setDisplayText(dayData.getText());
+                ret = baseCellView;
             } else {
                 ret = new DefaultCellView(getContext());
                 ((DefaultCellView) ret).setDisplayText(dayData.getText());

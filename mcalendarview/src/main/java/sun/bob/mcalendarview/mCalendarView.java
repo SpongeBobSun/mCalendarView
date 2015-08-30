@@ -8,7 +8,6 @@ import android.graphics.drawable.shapes.RectShape;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.View;
 
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
@@ -16,6 +15,7 @@ import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
+import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MarkedDates;
 
@@ -108,30 +108,36 @@ public class mCalendarView extends ViewPager {
         return MarkedDates.getInstance();
     }
 
-    public mCalendarView setDateCellViewResId(int resId){
-
+    public mCalendarView setDateCell(int resId){
+        adapter.setDateCellId(resId);
         return this;
     }
 
-    public mCalendarView setDateCellView(View view){
+//    public mCalendarView setDateCellView(BaseCellView view){
+//        adapter.setDateCell(view);
+//        return this;
+//    }
 
+    public mCalendarView setMarkedStyle(int style, int color){
+        MarkStyle.current = style;
+        MarkStyle.color = color;
         return this;
     }
 
     public mCalendarView setMarkedStyle(int style){
-
+        MarkStyle.current = style;
         return this;
     }
 
     public mCalendarView setMarkedCell(int resId){
-
+        adapter.setMarkCellId(resId);
         return this;
     }
 
-    public mCalendarView setMarkedCellView(View view){
-
-        return this;
-    }
+//    public mCalendarView setMarkedCellView(BaseCellView view){
+//        adapter.setDateCell(view);
+//        return this;
+//    }
 
     public mCalendarView setOnMonthChangeListener(OnMonthChangeListener listener){
         this.addOnPageChangeListener(listener);
@@ -149,7 +155,6 @@ public class mCalendarView extends ViewPager {
         width = measureWidth(measureWidthSpec);
         height = measureHeight(measureHeightSpec);
         this.setMeasuredDimension(width, height);
-//        this.measureChildren(measureWidthSpec, measureHeightSpec);
     }
 
     private int measureWidth(int measureSpec) {
@@ -157,9 +162,7 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            //// TODO: 15/8/29 USE SIZE*DPI HERE!
-            // Equations are: (size * DisplayMetrics.destinyDPI) / DisplayMetrics.DENSITY_DEFAULT
-            result = CellConfig.cellWidth;
+            result = (int) (CellConfig.cellWidth * 7 * getContext().getResources().getSystem().getDisplayMetrics().density);
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
         } else {
@@ -172,7 +175,7 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            result = CellConfig.cellHeight * 7;
+            result = (int) (CellConfig.cellWidth * 7 * getContext().getResources().getSystem().getDisplayMetrics().density);
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
         } else {
