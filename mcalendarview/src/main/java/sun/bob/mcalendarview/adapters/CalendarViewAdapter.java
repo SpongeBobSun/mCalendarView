@@ -69,7 +69,7 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
         int month = CalendarUtil.position2Month(position);
 
         MonthFragment fragment = new MonthFragment();
-        MonthData monthData = new MonthData(new DateData(year, month, date.getDay()));
+        MonthData monthData = new MonthData(new DateData(year, month, month / 2));
         fragment.setData(monthData, dateCellId, markCellId);
         return fragment;
     }

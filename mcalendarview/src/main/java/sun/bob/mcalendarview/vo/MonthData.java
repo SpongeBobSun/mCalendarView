@@ -37,11 +37,13 @@ public class MonthData {
         if(date.getMonth() - 1 > 0) {
             lastMonth = date.getMonth() - 2;
             tmpCal.set(date.getYear(), lastMonth, 1);
+            lastMonthTotalDay = tmpCal.getActualMaximum(Calendar.DAY_OF_MONTH);
+            lastMonth += 1;
         }else{
             lastMonth = 12;
             tmpCal.set(date.getYear()-1,11,1);
+            lastMonthTotalDay = tmpCal.getActualMaximum(Calendar.DAY_OF_MONTH);
         }
-        lastMonthTotalDay = tmpCal.getActualMaximum(Calendar.DAY_OF_MONTH);
     }
 
     private void initArray(){
