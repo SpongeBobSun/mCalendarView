@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onMonthChange(int year, int month) {
                 Toast.makeText(MainActivity.this, String.format("%d-%d", year, month), Toast.LENGTH_SHORT).show();
             }
-        }).setMarkedStyle(MarkStyle.BACKGROUND)
+        }).setMarkedStyle(MarkStyle.LEFTSIDEBAR)
                 .markDate(2015, 6, 1).markDate(2015, 6, 25)
                 .markDate(2015, 7, 4).markDate(2015, 7, 19)
                 .markDate(2015, 8, 20).markDate(2015, 8, 4)

@@ -17,12 +17,9 @@ mCalendarView provide below components.
 After checkout this repo, you will get a sample project and the mCalendarView module is located in `mcalendarview` folder.
 
 ##Screenshots
-To be added. 
+I used Android built-in `screenrecord` command to get the screenshot. But for some reason I don't know, the screen color is weird...
 
-Due to the GFW I can't install ffmpeg via homebew -> I can't convert my screen record video to gif.
-
-Will be added by tomorrow.
-
+![Alt ](./screenshot/shot.gif)
 ##Usage
 
 ###Add to Layout
@@ -156,4 +153,11 @@ To set an OnDateClickListener, extend this class and call `setOnDateClickListene
         });
         
 #More Screenshots
-To be added.
+####MarkStyle.BACKGROUND
+![Alt ](./screenshot/MarkStyle.BACKGROUND.png)
+
+####MarkStyle.DOT
+
+![Alt ](./screenshot/MarkStyle.DOT.png)
+
+####MarkStyle.LEFTSIDEBAR

@@ -70,7 +70,7 @@ public class DefaultMarkView extends BaseMarkView {
             case MarkStyle.DOT:
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(VERTICAL);
-                textView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, (float) 1.0));
+                textView.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, (float) 2.0));
 
                 this.addView(new PlaceHolderVertical(getContext()));
                 this.addView(textView);
@@ -92,7 +92,7 @@ public class DefaultMarkView extends BaseMarkView {
             case MarkStyle.LEFTSIDEBAR:
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(HORIZONTAL);
-                textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0));
+                textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 3.0));
 
                 PlaceHolderHorizontal barLeft = new PlaceHolderHorizontal(getContext());
                 barLeft.setBackgroundColor(MarkStyle.color);
