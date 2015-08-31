@@ -79,12 +79,10 @@ public class DefaultMarkView extends BaseMarkView {
             case MarkStyle.RIGHTSIDEBAR:
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(HORIZONTAL);
-                textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0));
+                textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 3.0));
 
                 this.addView(new PlaceHolderHorizontal(getContext()));
-                this.addView(new PlaceHolderHorizontal(getContext()));
                 this.addView(textView);
-                this.addView(new PlaceHolderHorizontal(getContext()));
                 PlaceHolderHorizontal barRight = new PlaceHolderHorizontal(getContext());
                 barRight.setBackgroundColor(MarkStyle.color);
                 this.addView(barRight);
@@ -97,9 +95,7 @@ public class DefaultMarkView extends BaseMarkView {
                 PlaceHolderHorizontal barLeft = new PlaceHolderHorizontal(getContext());
                 barLeft.setBackgroundColor(MarkStyle.color);
                 this.addView(barLeft);
-                this.addView(new PlaceHolderHorizontal(getContext()));
                 this.addView(textView);
-                this.addView(new PlaceHolderHorizontal(getContext()));
                 this.addView(new PlaceHolderHorizontal(getContext()));
 
                 return;

@@ -161,3 +161,9 @@ To set an OnDateClickListener, extend this class and call `setOnDateClickListene
 ![Alt ](./screenshot/MarkStyle.DOT.png)
 
 ####MarkStyle.LEFTSIDEBAR
+
+![Alt](./screenshot/MarkStyle.LEFTSIDEBAR.png)
+
+####MarkStyle.RIGHTSIDEBAR
+
+![Alt](./screenshot/MarkStyle.RIGHTSIDEBAR.png)

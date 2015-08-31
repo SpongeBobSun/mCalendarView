@@ -18,9 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c62dd3d4-a62d-47b0-baed-f0e039b77819" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot/MarkStyle.BACKGROUND.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot/MarkStyle.DOT.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot/shot.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot/MarkStyle.LEFTSIDEBAR.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/screenshot/MarkStyle.RIGHTSIDEBAR.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
@@ -28,7 +27,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java" afterPath="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mCalendarViewTest.iws" />
@@ -50,25 +48,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="96" selection-start-line="33" selection-start-column="96" selection-end-line="33" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.38283062">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultMarkView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalendarAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultMarkView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8352668">
-              <caret line="50" column="51" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="107" selection-start-line="81" selection-start-column="107" selection-end-line="81" selection-end-column="107" />
               <folding>
-                <element signature="method#setDisplayText#0;class#DefaultMarkView#0" expanded="false" />
-                <element signature="class#PlaceHolderHorizontal#0;class#DefaultMarkView#0" expanded="false" />
-                <element signature="class#PlaceHolderVertical#0;class#DefaultMarkView#0" expanded="false" />
+                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+                <element signature="e#1149#1150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseMarkView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseMarkView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#515#516#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2279,7 +2303,6 @@
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/TitleData.java" />
         <option value="/Developer/Android/sdk/sources/android-23/java/util/ArrayList.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/vo/MarkedDates.java" />
-        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseMarkView.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/MonthView.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/listeners/OnMonthChangeListener.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/listeners/OnDateClickListener.java" />
@@ -2304,8 +2327,9 @@
         <option value="$PROJECT_DIR$/mcalendarview/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" />
+        <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseMarkView.java" />
         <option value="$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2825,7 +2849,13 @@
       <option name="project" value="LOCAL" />
       <updated>1440948355704</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add screenshots">
+      <created>1440986650941</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1440986650941</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2846,7 +2876,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16765054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5395514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45808735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2891,7 +2921,8 @@
     <MESSAGE value="Overload some measure method.&#10;Will be back tomorrow." />
     <MESSAGE value="Almost there." />
     <MESSAGE value="Update readme." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme." />
+    <MESSAGE value="Add screenshots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add screenshots" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2989,13 +3020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseMarkView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6465517">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -3152,13 +3176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72713864">
           <caret line="71" column="79" selection-start-line="71" selection-start-column="79" selection-end-line="71" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7743363">
-          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -3174,6 +3191,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79646015">
           <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3205,17 +3223,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseCellView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding>
-            <element signature="e#486#487#0" expanded="false" />
-            <element signature="e#516#517#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3277,23 +3284,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseCellView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64102566">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/adapters/CalendarAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="96" selection-start-line="33" selection-start-column="96" selection-end-line="33" selection-end-column="96" />
+          <caret line="60" column="9" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/BaseMarkView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mcalendarview/src/main/java/sun/bob/mcalendarview/views/DefaultMarkView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8352668">
-          <caret line="50" column="51" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="107" selection-start-line="81" selection-start-column="107" selection-end-line="81" selection-end-column="107" />
           <folding>
-            <element signature="method#setDisplayText#0;class#DefaultMarkView#0" expanded="false" />
-            <element signature="class#PlaceHolderHorizontal#0;class#DefaultMarkView#0" expanded="false" />
-            <element signature="class#PlaceHolderVertical#0;class#DefaultMarkView#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/sun/bob/mcalendarviewtest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38283062">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
