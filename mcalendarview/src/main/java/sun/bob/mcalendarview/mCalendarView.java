@@ -8,6 +8,8 @@ import android.graphics.drawable.shapes.RectShape;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
@@ -15,7 +17,6 @@ import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
-import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MarkedDates;
 
@@ -67,6 +68,7 @@ public class mCalendarView extends ViewPager {
         this.setAdapter(adapter);
         this.setCurrentItem(500);
         addBackground();
+
     }
 
     private void addBackground(){
@@ -148,10 +150,10 @@ public class mCalendarView extends ViewPager {
 
     @Override
     protected void onMeasure(int measureWidthSpec,int measureHeightSpec){
-        super.onMeasure(measureWidthSpec, measureHeightSpec);
         width = measureWidth(measureWidthSpec);
         height = measureHeight(measureHeightSpec);
-        this.setMeasuredDimension(width, height);
+        measureHeightSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
+        super.onMeasure(measureWidthSpec, measureHeightSpec);
     }
 
     private int measureWidth(int measureSpec) {
@@ -172,7 +174,9 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            int columns = hasTitle ? 7 : 5;
+//            int columns = CalendarUtil.getWeekCount();
+            int columns = 6;
+            columns = hasTitle ? columns + 1 : columns;
             result = (int) (CellConfig.cellWidth * columns * getContext().getResources().getSystem().getDisplayMetrics().density);
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;

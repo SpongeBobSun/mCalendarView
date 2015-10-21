@@ -2,10 +2,7 @@ package sun.bob.mcalendarview.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ListAdapter;
 
 import sun.bob.mcalendarview.adapters.CalendarAdapter;
 import sun.bob.mcalendarview.vo.MonthData;

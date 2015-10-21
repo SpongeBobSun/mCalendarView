@@ -48,4 +48,15 @@ public class CalendarUtil {
         }
         return ret==0?12:ret;
     }
+
+    public static int getWeekCount(int position){
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(position2Year(position), position2Month(position) - 1, 1) ;
+        int start = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+        int ret =  calendar.getActualMaximum(Calendar.DAY_OF_MONTH) + start;
+        int more = ret % 7 == 0 ? 0 : 1;
+        ret = ret / 7 + more;
+        calendar = null;
+        return ret;
+    }
 }
