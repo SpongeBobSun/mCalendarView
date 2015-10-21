@@ -22,10 +22,15 @@ public class MonthFragment extends Fragment {
     private MonthData monthData;
     private int cellView = -1;
     private int markView = -1;
+    private boolean hasTitle = true;
     public void setData(MonthData monthData, int cellView, int markView){
         this.monthData = monthData;
         this.cellView = cellView;
         this.markView = markView;
+    }
+
+    public void setTitle(boolean hasTitle){
+        this.hasTitle = hasTitle;
     }
 
     @Override
@@ -34,9 +39,12 @@ public class MonthFragment extends Fragment {
         ret.setOrientation(LinearLayout.VERTICAL);
         ret.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         ret.setGravity(Gravity.CENTER);
-        TextView textView = new TextView(getContext());
-        textView.setText(String.format("%d-%d", monthData.getDate().getYear(), monthData.getDate().getMonth()));
-        ret.addView(textView);
+        if(hasTitle){
+            TextView textView = new TextView(getContext());
+            textView.setText(String.format("%d-%d", monthData.getDate().getYear(), monthData.getDate().getMonth()));
+            ret.addView(textView);
+        }
+
         MonthView monthView = new MonthView(getContext());
         monthView.setAdapter(new CalendarAdapter(getContext(), 1, monthData.getData()).setCellViews(cellView, markView));
         ret.addView(monthView);

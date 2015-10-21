@@ -22,6 +22,7 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
 
     private int dateCellId;
     private int markCellId;
+    private boolean hasTitle = true;
 
     private Context context;
 
@@ -39,29 +40,16 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
     }
 
     public CalendarViewAdapter setDateCellId(int dateCellRes){
-//        if (context == null)
-//            throw new NullPointerException("Context is null! Use `setContext` to set context please.");
         this.dateCellId =  dateCellRes;
         return this;
     }
 
-//    public CalendarViewAdapter setDateCell(BaseCellView dateCell){
-//        this.dateCellId = dateCell;
-//        return this;
-//    }
 
     public CalendarViewAdapter setMarkCellId(int markCellId){
-//        if (context == null)
-//            throw new NullPointerException("Context is null! Use `setContext` to set context please.");
-//        this.dateCellId = (BaseCellView) View.inflate(context, dateCellRes, null);
         this.markCellId = markCellId;
         return this;
     }
 
-//    public CalendarViewAdapter setMarkCell(BaseMarkView markCell){
-//        this.markCellId = markCell;
-//        return this;
-//    }
 
     @Override
     public Fragment getItem(int position) {
@@ -69,12 +57,18 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
         int month = CalendarUtil.position2Month(position);
 
         MonthFragment fragment = new MonthFragment();
-        MonthData monthData = new MonthData(new DateData(year, month, month / 2));
+        fragment.setTitle(hasTitle);
+        MonthData monthData = new MonthData(new DateData(year, month, month / 2), hasTitle);
         fragment.setData(monthData, dateCellId, markCellId);
         return fragment;
     }
     @Override
     public int getCount() {
         return 1000;
+    }
+
+    public CalendarViewAdapter setTitle(boolean hasTitle){
+        this.hasTitle = hasTitle;
+        return this;
     }
 }

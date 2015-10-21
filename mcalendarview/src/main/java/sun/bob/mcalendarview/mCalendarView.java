@@ -28,6 +28,7 @@ public class mCalendarView extends ViewPager {
     private int markedStyle = -1;
     private int markedCellResId = -1;
     private View markedCellView = null;
+    private boolean hasTitle = true;
 
     private boolean initted = false;
 
@@ -113,11 +114,6 @@ public class mCalendarView extends ViewPager {
         return this;
     }
 
-//    public mCalendarView setDateCellView(BaseCellView view){
-//        adapter.setDateCell(view);
-//        return this;
-//    }
-
     public mCalendarView setMarkedStyle(int style, int color){
         MarkStyle.current = style;
         MarkStyle.color = color;
@@ -129,15 +125,10 @@ public class mCalendarView extends ViewPager {
         return this;
     }
 
-    public mCalendarView setMarkedCell(int resId){
+    public mCalendarView setMarkedCell(int resId) {
         adapter.setMarkCellId(resId);
         return this;
     }
-
-//    public mCalendarView setMarkedCellView(BaseCellView view){
-//        adapter.setDateCell(view);
-//        return this;
-//    }
 
     public mCalendarView setOnMonthChangeListener(OnMonthChangeListener listener){
         this.addOnPageChangeListener(listener);
@@ -146,6 +137,12 @@ public class mCalendarView extends ViewPager {
 
     public mCalendarView setOnDateClickListener(OnDateClickListener onDateClickListener){
         OnDateClickListener.instance = onDateClickListener;
+        return this;
+    }
+
+    public mCalendarView hasTitle(boolean hasTitle){
+        this.hasTitle = hasTitle;
+        adapter.setTitle(hasTitle);
         return this;
     }
 
@@ -175,7 +172,8 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            result = (int) (CellConfig.cellWidth * 7 * getContext().getResources().getSystem().getDisplayMetrics().density);
+            int columns = hasTitle ? 7 : 5;
+            result = (int) (CellConfig.cellWidth * columns * getContext().getResources().getSystem().getDisplayMetrics().density);
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
         } else {

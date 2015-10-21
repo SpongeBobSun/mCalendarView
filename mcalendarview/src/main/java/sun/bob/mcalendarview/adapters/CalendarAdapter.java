@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.CharArrayReader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
@@ -36,6 +37,7 @@ public class CalendarAdapter extends ArrayAdapter {
         this.markView = markView;
         return this;
     }
+
 
     public View getView(int position, View convertView, ViewGroup viewGroup){
         View ret = null;

@@ -18,11 +18,13 @@ public class MonthData {
 
     private ArrayList<DayData> content;
 
-    public MonthData(DateData dateData){
+    private boolean hasTitle;
+    public MonthData(DateData dateData, boolean hasTitle){
         date = dateData;
         calendar = Calendar.getInstance();
         calendar.set(date.getYear(), date.getMonth() - 1, date.getDay());
         content = new ArrayList<DayData>();
+        this.hasTitle = hasTitle;
         initHeadToTail();
         initArray();
     }
@@ -47,8 +49,10 @@ public class MonthData {
     }
 
     private void initArray(){
-        for (int i = 0;i < 7;i++){
-            content.add(new TitleData(new DateData(0,0,i+1)));
+        if (hasTitle){
+            for (int i = 0;i < 7;i++){
+                content.add(new TitleData(new DateData(0,0,i+1)));
+            }
         }
         DayData addDate;
         for(int i = 0;i < totalDay+7;i++){

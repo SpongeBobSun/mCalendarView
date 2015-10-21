@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 .markDate(2015, 7, 4).markDate(2015, 7, 19)
                 .markDate(2015, 8, 20).markDate(2015, 8, 4)
                 .markDate(2015, 9, 20).markDate(2015, 9, 1)
-                .markDate(2015, 10, 7).markDate(2015,10, 17);
+                .markDate(2015, 10, 7).markDate(2015,10, 17)
+        .hasTitle(false);
 
 //************************************************************************************************************
 //        Use default view.
