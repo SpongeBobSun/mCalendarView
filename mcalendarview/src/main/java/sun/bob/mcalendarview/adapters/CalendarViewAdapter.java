@@ -5,8 +5,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.View;
+import android.view.ViewGroup;
 
 import sun.bob.mcalendarview.fragments.MonthFragment;
+import sun.bob.mcalendarview.mCalendarView;
 import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.views.BaseMarkView;
@@ -25,6 +27,7 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
     private boolean hasTitle = true;
 
     private Context context;
+    private int mCurrentPosition = -1;
 
     public CalendarViewAdapter(FragmentManager fm) {
         super(fm);
@@ -70,5 +73,11 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
     public CalendarViewAdapter setTitle(boolean hasTitle){
         this.hasTitle = hasTitle;
         return this;
+    }
+
+    @Override
+    public void setPrimaryItem(ViewGroup container, int position, Object object) {
+        super.setPrimaryItem(container, position, object);
+        ((mCalendarView) container).measureCurrentView(position);
     }
 }

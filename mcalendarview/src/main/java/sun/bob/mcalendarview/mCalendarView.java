@@ -8,8 +8,6 @@ import android.graphics.drawable.shapes.RectShape;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 
 import sun.bob.mcalendarview.adapters.CalendarViewAdapter;
@@ -37,6 +35,7 @@ public class mCalendarView extends ViewPager {
     private CalendarViewAdapter adapter;
 
     private int width, height;
+    private int currentIndex;
 
     public mCalendarView(Context context) {
         super(context);
@@ -155,7 +154,6 @@ public class mCalendarView extends ViewPager {
         measureHeightSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
         super.onMeasure(measureWidthSpec, measureHeightSpec);
     }
-
     private int measureWidth(int measureSpec) {
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
@@ -174,8 +172,7 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-//            int columns = CalendarUtil.getWeekCount();
-            int columns = 6;
+            int columns = CalendarUtil.getWeekCount(currentIndex);
             columns = hasTitle ? columns + 1 : columns;
             result = (int) (CellConfig.cellWidth * columns * getContext().getResources().getSystem().getDisplayMetrics().density);
         } else if (specMode == MeasureSpec.EXACTLY) {
@@ -184,5 +181,11 @@ public class mCalendarView extends ViewPager {
             result = CellConfig.cellHeight;
         }
         return result;
+    }
+
+
+    public void measureCurrentView(int currentIndex) {
+        this.currentIndex = currentIndex;
+        requestLayout();
     }
 }
