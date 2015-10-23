@@ -26,7 +26,7 @@ public class DefaultCellView extends BaseCellView {
     }
 
     private void initLayout(){
-        matchParentParams = new AbsListView.LayoutParams(CellConfig.cellWidth, CellConfig.cellHeight);
+        matchParentParams = new AbsListView.LayoutParams((int) CellConfig.cellWidth, (int) CellConfig.cellHeight);
         this.setLayoutParams(matchParentParams);
         this.setOrientation(VERTICAL);
         textView = new TextView(getContext());

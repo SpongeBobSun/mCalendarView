@@ -43,7 +43,7 @@ public class DefaultMarkView extends BaseMarkView {
 
         textView = new TextView(getContext());
         textView.setGravity(Gravity.CENTER);
-        matchParentParams = new AbsListView.LayoutParams(CellConfig.cellWidth, CellConfig.cellHeight);
+        matchParentParams = new AbsListView.LayoutParams((int) CellConfig.cellWidth, (int) CellConfig.cellHeight);
         switch (MarkStyle.current){
             case MarkStyle.DEFAULT:
                 this.setLayoutParams(matchParentParams);

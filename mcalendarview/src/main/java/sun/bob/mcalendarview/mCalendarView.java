@@ -67,7 +67,9 @@ public class mCalendarView extends ViewPager {
         this.setAdapter(adapter);
         this.setCurrentItem(500);
         addBackground();
-
+        float density = getContext().getResources().getSystem().getDisplayMetrics().density;
+        CellConfig.cellHeight = getContext().getResources().getSystem().getDisplayMetrics().widthPixels / 7 / density;
+        CellConfig.cellWidth = getContext().getResources().getSystem().getDisplayMetrics().widthPixels / 7 / density;
     }
 
     private void addBackground(){
@@ -159,11 +161,12 @@ public class mCalendarView extends ViewPager {
         int specSize = MeasureSpec.getSize(measureSpec);
         int result = 0;
         if (specMode == MeasureSpec.AT_MOST) {
-            result = (int) (CellConfig.cellWidth * 7 * getContext().getResources().getSystem().getDisplayMetrics().density);
+            float destiney = getContext().getResources().getSystem().getDisplayMetrics().density;
+            result = (int) (CellConfig.cellWidth * 7 * destiney);
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
         } else {
-            result = CellConfig.cellHeight;
+            result = (int) CellConfig.cellHeight;
         }
         return result;
     }
@@ -174,11 +177,12 @@ public class mCalendarView extends ViewPager {
         if (specMode == MeasureSpec.AT_MOST) {
             int columns = CalendarUtil.getWeekCount(currentIndex);
             columns = hasTitle ? columns + 1 : columns;
-            result = (int) (CellConfig.cellWidth * columns * getContext().getResources().getSystem().getDisplayMetrics().density);
+            float density = getContext().getResources().getSystem().getDisplayMetrics().density;
+            result = (int) (CellConfig.cellHeight * columns * density);
         } else if (specMode == MeasureSpec.EXACTLY) {
             result = specSize;
         } else {
-            result = CellConfig.cellHeight;
+            result = (int) CellConfig.cellHeight;
         }
         return result;
     }
