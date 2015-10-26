@@ -6,7 +6,7 @@
     android:gravity="center">
 
     <sun.bob.mcalendarview.mCalendarView
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".MainActivity"
         android:id="@+id/calendar"
