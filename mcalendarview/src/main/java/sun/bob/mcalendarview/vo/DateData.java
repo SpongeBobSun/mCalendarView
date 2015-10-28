@@ -22,20 +22,30 @@ public class DateData {
         return year;
     }
 
-    public void setYear(int year) {
+    public DateData setYear(int year) {
         this.year = year;
+        return this;
     }
 
     public int getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
+    public String getMonthString(){
+        return month > 9 ? String.format("%d", month) : String.format("0%d", month);
+    }
+
+    public DateData setMonth(int month) {
         this.month = month;
+        return this;
     }
 
     public int getDay() {
         return day;
+    }
+
+    public String getDayString(){
+        return day > 9 ? String.format("%d", day) : String.format("0%d", day);
     }
 
     public void setDay(int day) {
@@ -47,7 +57,7 @@ public class DateData {
     }
 
     public String getHourString(){
-        return hour > 10 ? String.format("%d", hour) : String.format("0%d", hour);
+        return hour > 9 ? String.format("%d", hour) : String.format("0%d", hour);
     }
 
     public void setHour(int hour) {
@@ -59,7 +69,7 @@ public class DateData {
     }
 
     public String getMinuteString(){
-        return minute > 10 ? String.format("%d", minute) : String.format("0%d", minute);
+        return minute > 9 ? String.format("%d", minute) : String.format("0%d", minute);
     }
 
     public void setMinute(int minute) {

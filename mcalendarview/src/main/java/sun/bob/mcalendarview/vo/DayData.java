@@ -36,4 +36,5 @@ public class DayData {
     public DateData getDate(){
         return date;
     }
+
 }

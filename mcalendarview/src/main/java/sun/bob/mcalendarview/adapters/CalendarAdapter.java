@@ -1,6 +1,10 @@
 package sun.bob.mcalendarview.adapters;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -11,7 +15,9 @@ import java.io.CharArrayReader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+import sun.bob.mcalendarview.MarkStyle;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
+import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.views.BaseMarkView;
 import sun.bob.mcalendarview.views.DefaultCellView;
@@ -61,10 +67,13 @@ public class CalendarAdapter extends ArrayAdapter {
                 ((DefaultCellView) ret).setDisplayText(dayData.getText());
             }
         }
-            ((BaseCellView) ret).setDate(dayData.getDate());
-            if (OnDateClickListener.instance != null) {
+        ((BaseCellView) ret).setDate(dayData.getDate());
+        if (OnDateClickListener.instance != null) {
                 ((BaseCellView) ret).setOnDateClickListener(OnDateClickListener.instance);
-            }
+        }
+        if (dayData.getDate().equals(CurrentCalendar.getCurrentDateData())){
+            ret.setBackground(MarkStyle.todayBackground);
+        }
         return ret;
     }
 

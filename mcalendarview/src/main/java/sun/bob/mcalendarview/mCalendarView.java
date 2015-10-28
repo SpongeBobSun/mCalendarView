@@ -66,7 +66,7 @@ public class mCalendarView extends ViewPager {
         adapter = new CalendarViewAdapter(activity.getSupportFragmentManager()).setDate(currentDate);
         this.setAdapter(adapter);
         this.setCurrentItem(500);
-        addBackground();
+//        addBackground();
         float density = getContext().getResources().getSystem().getDisplayMetrics().density;
         CellConfig.cellHeight = getContext().getResources().getSystem().getDisplayMetrics().widthPixels / 7 / density;
         CellConfig.cellWidth = getContext().getResources().getSystem().getDisplayMetrics().widthPixels / 7 / density;
