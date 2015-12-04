@@ -26,7 +26,8 @@ public class CalendarUtil {
             ret = tmpYear + ((pos - 500) + date.getMonth() - 1)/12;
 
         }else{
-            ret =  tmpYear - ((500 - pos)+tmpMonth)/12;
+//            ret =  tmpYear - ((500 - pos)+tmpMonth)/12;
+            ret = tmpYear - ((500-pos)/12);
         }
         return ret;
     }
