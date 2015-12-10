@@ -1,15 +1,17 @@
 package sun.bob.mcalendarview.vo;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  * Created by bob.sun on 15/8/28.
  */
-public class MarkedDates {
+public class MarkedDates extends Observable {
     private static MarkedDates staticInstance;
     private ArrayList<DateData> data;
 
     private MarkedDates(){
+        super();
         data = new ArrayList<>();
     }
 
@@ -29,6 +31,7 @@ public class MarkedDates {
 
     public MarkedDates add(DateData dateData){
         data.add(dateData);
+        this.setChanged();
         return this;
     }
 

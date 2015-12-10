@@ -1,19 +1,13 @@
 package sun.bob.mcalendarview.adapters;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.CharArrayReader;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import sun.bob.mcalendarview.MarkStyle;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
@@ -22,20 +16,20 @@ import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.views.BaseMarkView;
 import sun.bob.mcalendarview.views.DefaultCellView;
 import sun.bob.mcalendarview.views.DefaultMarkView;
-import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.DayData;
 import sun.bob.mcalendarview.vo.MarkedDates;
 
 /**
  * Created by bob.sun on 15/8/27.
  */
-public class CalendarAdapter extends ArrayAdapter {
+public class CalendarAdapter extends ArrayAdapter implements Observer {
     private ArrayList data;
     private int cellView = -1;
     private int markView = -1;
     public CalendarAdapter(Context context, int resource, ArrayList data) {
         super(context, resource);
         this.data = data;
+        MarkedDates.getInstance().addObserver(this);
     }
 
     public CalendarAdapter setCellViews(int cellView, int markView){
@@ -80,5 +74,10 @@ public class CalendarAdapter extends ArrayAdapter {
     @Override
     public int getCount(){
         return data.size();
+    }
+
+    @Override
+    public void update(Observable observable, Object data) {
+        this.notifyDataSetChanged();
     }
 }

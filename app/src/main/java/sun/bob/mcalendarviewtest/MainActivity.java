@@ -12,6 +12,7 @@ import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.mCalendarView;
 import sun.bob.mcalendarview.vo.DateData;
+import sun.bob.mcalendarview.vo.MarkedDates;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //      Get instance.
-        mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
+        final mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
 
 //      Set up listeners.
         calendarView.setOnDateClickListener(new OnDateClickListener() {
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMonthChange(int year, int month) {
                 Toast.makeText(MainActivity.this, String.format("%d-%d", year, month), Toast.LENGTH_SHORT).show();
+                calendarView.markDate(year, month, 5);
+                MarkedDates.getInstance().notifyObservers();
             }
         }).setMarkedStyle(MarkStyle.RIGHTSIDEBAR)
                 .markDate(2015, 6, 1).markDate(2015, 6, 25)
