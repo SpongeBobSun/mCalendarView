@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import sun.bob.mcalendarview.MarkStyle;
@@ -32,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
         }).setOnMonthChangeListener(new OnMonthChangeListener() {
             @Override
             public void onMonthChange(int year, int month) {
-                Toast.makeText(MainActivity.this, String.format("%d-%d", year, month), Toast.LENGTH_SHORT).show();
-                calendarView.markDate(year, month, 5);
-                MarkedDates.getInstance().notifyObservers();
+                ((TextView) findViewById(R.id.ind)).setText(String.format("%d-%d", year, month));
+//                Toast.makeText(MainActivity.this, String.format("%d-%d", year, month), Toast.LENGTH_SHORT).show();
+//                calendarView.markDate(year, month, 5);
+//                MarkedDates.getInstance().notifyObservers();
             }
         }).setMarkedStyle(MarkStyle.RIGHTSIDEBAR)
                 .markDate(2015, 6, 1).markDate(2015, 6, 25)

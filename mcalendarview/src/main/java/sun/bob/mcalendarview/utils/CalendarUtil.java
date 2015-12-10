@@ -14,6 +14,7 @@ public class CalendarUtil {
         int tmpYear,tmpMonth;
         Calendar c = Calendar.getInstance();
 //        tmpYear = c.get(Calendar.YEAR);
+        // TODO: 15/12/10 Maybe using current year is a mistake.
         tmpYear = date.getYear();
         tmpMonth = CalendarUtil.position2Month(pos);
         int ret;
@@ -22,12 +23,12 @@ public class CalendarUtil {
         }
         if(pos > 500){
 
-//            ret = tmpYear + ((pos - 500) + c.get(Calendar.MONTH))/12;
-            ret = tmpYear + ((pos - 500) + date.getMonth() - 1)/12;
+            ret = tmpYear + ((pos - 500) + c.get(Calendar.MONTH))/12;
+//            ret = tmpYear + ((pos - 500) + date.getMonth() - 1)/12;//oong
 
         }else{
-//            ret =  tmpYear - ((500 - pos)+tmpMonth)/12;
-            ret = tmpYear - ((500-pos)/12);
+            ret =  tmpYear - ((500 - pos)+tmpMonth - 1)/12;
+//            ret = tmpYear - ((500-pos)/12);   //oong
         }
         return ret;
     }
