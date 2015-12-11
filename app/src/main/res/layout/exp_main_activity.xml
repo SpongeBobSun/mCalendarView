@@ -11,9 +11,10 @@
         android:id="@+id/main_YYMM_Tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="12dp"
-        android:background="#fff"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:textColor="#fff"
+        android:background="#A777BE"
         android:text="----年-月" />
 
     <View
