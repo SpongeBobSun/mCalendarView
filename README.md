@@ -1,12 +1,13 @@
 # mCalendarView
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-mCalendarView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2420)
 
-Customizable Calendar Widget for Android
+Customizable & Expandable Calendar Widget for Android
 
 ##Project Components
 mCalendarView provide below components.
 
 * mCalendarView, which is our customizable calendar widget.
+* ExpCalendarView, which is expandable calendar widget.
 * BaseCellView, an abstract view class for date cells.
 * BaseMarkView, an abstract view class for marked / highlighted date cells.
 * MarkStyle, provide built-in and default mark / highlight style values.
@@ -18,14 +19,23 @@ mCalendarView provide below components.
 ## Project Structure
 After checkout this repo, you will get a sample project and the mCalendarView module is located in `mcalendarview` folder.
 
+Class `mCalednarView` is for normal calendar view.
+
+Class `ExpCalendarView` is for expandable calendar view.
+
+Expandable calendar view is contributed by my homie [mBigMing](https://github.com/mBigFlower). Big thank you for that.
+
 ##Screenshots
 I used Android built-in `screenrecord` command to get the screenshot. But for some reason I don't know, the screen color is weird...
 
 ![Alt ](./screenshot/shot.gif)
+![Alt ](./screenshot/exp.gif)
 ##Usage
 
 ###Add to Layout
 To use mCalendarView, you need to add it in layout by using xml file or Java code. 
+
+####Add normal calendarview
 
 ######Make sure you specifiy an `FragmentActivity` or it's sub-class as mCalendarView's context.
 
@@ -35,6 +45,14 @@ To use mCalendarView, you need to add it in layout by using xml file or Java cod
         tools:context=".MainActivity"
         android:id="@+id/calendar"
         />
+        
+####Add expandable calendarview
+
+    <sun.bob.mcalendarview.views.ExpCalendarView
+        android:id="@+id/calendar_exp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity" />
         
 ###Jump to Date
 By default, mCalendarView will display current month. If you what to jump to another month, use `travelTo(DateData date)` function in mCalendarView.
@@ -154,6 +172,11 @@ To set an OnDateClickListener, extend this class and call `setOnDateClickListene
             }
         });
         
+###Expand & Shrink
+
+	expCalendarView.expand();
+	expCalendarView.shrink();
+        
 #More Screenshots
 ####MarkStyle.BACKGROUND
 ![Alt ](./screenshot/MarkStyle.BACKGROUND.png)
@@ -172,7 +195,13 @@ To set an OnDateClickListener, extend this class and call `setOnDateClickListene
 
 #Credits
 
-[oong](https://github.com/oong)
+###[mBigMing](https://github.com/mBigFlower)
+
+For Expandabel calendar view.
+
+###[oong](https://github.com/oong) & [Barry](https://github.com/fg2q1q3q)
+
+For bug fix.
 
 #License
 Copyright 2015 Bob Sun
