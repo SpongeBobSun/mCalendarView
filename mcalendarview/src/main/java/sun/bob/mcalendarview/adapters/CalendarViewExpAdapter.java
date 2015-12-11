@@ -5,17 +5,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
-
-import sun.bob.mcalendarview.fragments.MonthFragment;
-import sun.bob.mcalendarview.mCalendarView;
-import sun.bob.mcalendarview.utils.CalendarUtil;
+import sun.bob.mcalendarview.views.ExpCalendarView;
+import sun.bob.mcalendarview.views.MonthExpFragment;
 import sun.bob.mcalendarview.vo.DateData;
-import sun.bob.mcalendarview.vo.MonthData;
 
 /**
- * Created by bob.sun on 15/8/27.
+ * Created by 明明大美女 on 2015/12/8.
  */
-public class CalendarViewAdapter extends FragmentStatePagerAdapter {
+public class CalendarViewExpAdapter extends FragmentStatePagerAdapter {
 
     private DateData date;
 
@@ -26,11 +23,11 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
     private Context context;
     private int mCurrentPosition = -1;
 
-    public CalendarViewAdapter(FragmentManager fm) {
+    public CalendarViewExpAdapter(FragmentManager fm) {
         super(fm);
     }
 
-    public CalendarViewAdapter setDate(DateData date){
+    public CalendarViewExpAdapter setDate(DateData date){
         this.date = date;
         return this;
     }
@@ -39,13 +36,13 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
         this.context = context;
     }
 
-    public CalendarViewAdapter setDateCellId(int dateCellRes){
+    public CalendarViewExpAdapter setDateCellId(int dateCellRes){
         this.dateCellId =  dateCellRes;
         return this;
     }
 
 
-    public CalendarViewAdapter setMarkCellId(int markCellId){
+    public CalendarViewExpAdapter setMarkCellId(int markCellId){
         this.markCellId = markCellId;
         return this;
     }
@@ -53,21 +50,17 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        int year = CalendarUtil.position2Year(position);
-        int month = CalendarUtil.position2Month(position);
-
-        MonthFragment fragment = new MonthFragment();
-        fragment.setTitle(hasTitle);
-        MonthData monthData = new MonthData(new DateData(year, month, month / 2), hasTitle);
-        fragment.setData(monthData, dateCellId, markCellId);
+        MonthExpFragment fragment = new MonthExpFragment();
+        fragment.setData(position, dateCellId, markCellId);
         return fragment;
     }
+
     @Override
     public int getCount() {
         return 1000;
     }
 
-    public CalendarViewAdapter setTitle(boolean hasTitle){
+    public CalendarViewExpAdapter setTitle(boolean hasTitle){
         this.hasTitle = hasTitle;
         return this;
     }
@@ -75,6 +68,20 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
         super.setPrimaryItem(container, position, object);
-        ((mCalendarView) container).measureCurrentView(position);
+        ((ExpCalendarView) container).measureCurrentView(position);
     }
+
+    /**
+     * 重写该方法，为了刷新页面
+     * @param object
+     * @return
+     */
+    @Override
+    public int getItemPosition(Object object) {
+        if (object.getClass().getName().equals(MonthExpFragment.class.getName())) {
+            return POSITION_NONE;
+        }
+        return super.getItemPosition(object);
+    }
+
 }
