@@ -4,14 +4,11 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.View;
 import android.view.ViewGroup;
 
 import sun.bob.mcalendarview.fragments.MonthFragment;
 import sun.bob.mcalendarview.mCalendarView;
 import sun.bob.mcalendarview.utils.CalendarUtil;
-import sun.bob.mcalendarview.views.BaseCellView;
-import sun.bob.mcalendarview.views.BaseMarkView;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MonthData;
 

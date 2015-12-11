@@ -1,7 +1,8 @@
 package sun.bob.mcalendarviewtest;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +14,6 @@ import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.mCalendarView;
 import sun.bob.mcalendarview.vo.DateData;
-import sun.bob.mcalendarview.vo.MarkedDates;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, ExpMainActivity.class));
             return true;
         }
 

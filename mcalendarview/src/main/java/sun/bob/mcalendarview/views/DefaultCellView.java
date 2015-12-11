@@ -13,7 +13,7 @@ import sun.bob.mcalendarview.CellConfig;
  * Created by bob.sun on 15/8/28.
  */
 public class DefaultCellView extends BaseCellView {
-    private TextView textView;
+    public TextView textView;
     private AbsListView.LayoutParams matchParentParams;
     public DefaultCellView(Context context) {
         super(context);
