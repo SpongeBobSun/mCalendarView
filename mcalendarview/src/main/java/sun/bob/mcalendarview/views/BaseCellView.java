@@ -9,6 +9,7 @@ import sun.bob.mcalendarview.CellConfig;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.vo.DateData;
+import sun.bob.mcalendarview.vo.DayData;
 
 /**
  * Created by bob.sun on 15/8/28.
@@ -90,5 +91,5 @@ public abstract class BaseCellView extends LinearLayout {
         }
         return result;
     }
-    public abstract void setDisplayText(String text);
+    public abstract void setDisplayText(DayData day);
 }

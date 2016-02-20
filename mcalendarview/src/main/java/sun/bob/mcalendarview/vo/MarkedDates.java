@@ -3,6 +3,8 @@ package sun.bob.mcalendarview.vo;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import sun.bob.mcalendarview.MarkStyle;
+
 /**
  * Created by bob.sun on 15/8/28.
  */
@@ -21,8 +23,12 @@ public class MarkedDates extends Observable {
         return staticInstance;
     }
 
-    public boolean check(DateData date){
-        return data.contains(date);
+    public MarkStyle check(DateData date){
+        int index = data.indexOf(date);
+        if (index == -1) {
+            return null;
+        }
+        return data.get(index).getMarkStyle();
     }
 
     public boolean remove(DateData date){

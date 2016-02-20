@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 import sun.bob.mcalendarview.views.BaseMarkView;
+import sun.bob.mcalendarview.vo.DayData;
 
 /**
  * Created by bob.sun on 15/8/30.
@@ -19,7 +20,7 @@ public class MarkCellView extends BaseMarkView {
     }
 
     @Override
-    public void setDisplayText(String text) {
-        ((TextView) this.findViewById(R.id.id_cell_text)).setText(text);
+    public void setDisplayText(DayData day) {
+        ((TextView) this.findViewById(R.id.id_cell_text)).setText(day.getText());
     }
 }

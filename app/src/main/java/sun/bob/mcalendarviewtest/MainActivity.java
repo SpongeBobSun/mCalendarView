@@ -1,6 +1,7 @@
 package sun.bob.mcalendarviewtest;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -39,12 +40,10 @@ public class MainActivity extends AppCompatActivity {
 //                MarkedDates.getInstance().notifyObservers();
             }
         }).setMarkedStyle(MarkStyle.RIGHTSIDEBAR)
-                .markDate(2015, 6, 1).markDate(2015, 6, 25)
-                .markDate(2015, 7, 4).markDate(2015, 7, 19)
-                .markDate(2015, 8, 20).markDate(2015, 8, 4)
-                .markDate(2015, 9, 20).markDate(2015, 9, 1)
-                .markDate(2015, 10, 7).markDate(2015,10, 17)
-        .hasTitle(false);
+                .markDate(2016, 2, 1).markDate(2016, 3, 25)
+                .markDate(2016, 2, 4)
+                .markDate(new DateData(2016, 3, 1).setMarkStyle(new MarkStyle(MarkStyle.DOT, Color.GREEN)))
+                        .hasTitle(false);
 
 //************************************************************************************************************
 //        Use default view.

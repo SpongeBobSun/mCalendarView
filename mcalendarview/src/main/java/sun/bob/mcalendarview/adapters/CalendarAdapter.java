@@ -42,23 +42,26 @@ public class CalendarAdapter extends ArrayAdapter implements Observer {
     public View getView(int position, View convertView, ViewGroup viewGroup){
         View ret = null;
         DayData dayData = (DayData) data.get(position);
-        if (MarkedDates.getInstance().check(dayData.getDate())){
+        MarkStyle style = MarkedDates.getInstance().check(dayData.getDate());
+        boolean marked = style != null;
+        if (marked){
+            dayData.getDate().setMarkStyle(style);
             if (markView > 0){
                 BaseMarkView baseMarkView = (BaseMarkView) View.inflate(getContext(), markView, null);
-                baseMarkView.setDisplayText(dayData.getText());
+                baseMarkView.setDisplayText(dayData);
                 ret = baseMarkView;
             } else {
                 ret = new DefaultMarkView(getContext());
-                ((DefaultMarkView) ret).setDisplayText(dayData.getText());
+                ((DefaultMarkView) ret).setDisplayText(dayData);
             }
         } else {
             if (cellView > 0) {
                 BaseCellView baseCellView = (BaseCellView) View.inflate(getContext(), cellView, null);
-                baseCellView.setDisplayText(dayData.getText());
+                baseCellView.setDisplayText(dayData);
                 ret = baseCellView;
             } else {
                 ret = new DefaultCellView(getContext());
-                ((DefaultCellView) ret).setDisplayText(dayData.getText());
+                ((DefaultCellView) ret).setDisplayText(dayData);
             }
         }
         ((BaseCellView) ret).setDate(dayData.getDate());

@@ -8,6 +8,7 @@ import android.widget.AbsListView;
 import android.widget.TextView;
 
 import sun.bob.mcalendarview.CellConfig;
+import sun.bob.mcalendarview.vo.DayData;
 
 /**
  * Created by bob.sun on 15/8/28.
@@ -36,8 +37,8 @@ public class DefaultCellView extends BaseCellView {
     }
 
     @Override
-    public void setDisplayText(String text) {
-        textView.setText(text);
+    public void setDisplayText(DayData day) {
+        textView.setText(day.getText());
     }
 
     @Override

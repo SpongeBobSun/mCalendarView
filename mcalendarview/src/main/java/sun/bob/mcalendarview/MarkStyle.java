@@ -15,9 +15,9 @@ public class MarkStyle {
     public static final int LEFTSIDEBAR = 3;
     public static final int RIGHTSIDEBAR = 4;
     public static final int TEXT = 5;
-    public static final int DEFAULT = -1;
+    public static final int DEFAULT = 10;
 
-    public static int color = Color.rgb(0, 148, 243);
+    public static int defaultColor = Color.rgb(0, 148, 243);
 
     public static String text;
     public static int textColor;
@@ -53,4 +53,35 @@ public class MarkStyle {
             return 0;
         }
     };
+
+    private int style;
+    private int color;
+
+    public MarkStyle() {
+        this.style = MarkStyle.DEFAULT;
+        this.color = MarkStyle.defaultColor;
+    }
+
+    public MarkStyle(int style, int color) {
+        this.style = style;
+        this.color = color;
+    }
+
+    public int getStyle() {
+        return style;
+    }
+
+    public MarkStyle setStyle(int style) {
+        this.style = style;
+        return this;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public MarkStyle setColor(int color) {
+        this.color = color;
+        return this;
+    }
 }

@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import sun.bob.mcalendarview.CellConfig;
 import sun.bob.mcalendarview.MarkStyle;
+import sun.bob.mcalendarview.vo.DateData;
+import sun.bob.mcalendarview.vo.DayData;
 
 /**
  * Created by bob.sun on 15/8/28.
@@ -39,18 +41,17 @@ public class DefaultMarkView extends BaseMarkView {
         super(context, attrs);
     }
 
-    private void initLayout(){
-
+    private void initLayoutWithStyle(MarkStyle style){
         textView = new TextView(getContext());
         textView.setGravity(Gravity.CENTER);
         matchParentParams = new AbsListView.LayoutParams((int) CellConfig.cellWidth, (int) CellConfig.cellHeight);
-        switch (MarkStyle.current){
+        switch (style.getStyle()){
             case MarkStyle.DEFAULT:
                 this.setLayoutParams(matchParentParams);
                 this.setOrientation(HORIZONTAL);
                 textView.setTextColor(Color.WHITE);
                 circleDrawable = new ShapeDrawable(new OvalShape());
-                circleDrawable.getPaint().setColor(MarkStyle.color);
+                circleDrawable.getPaint().setColor(style.getColor());
                 this.setPadding(20, 20, 20, 20);
                 textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0));
                 textView.setBackground(circleDrawable);
@@ -61,7 +62,7 @@ public class DefaultMarkView extends BaseMarkView {
                 this.setOrientation(HORIZONTAL);
                 textView.setTextColor(Color.WHITE);
                 circleDrawable = new ShapeDrawable(new OvalShape());
-                circleDrawable.getPaint().setColor(MarkStyle.color);
+                circleDrawable.getPaint().setColor(style.getColor());
                 this.setPadding(20, 20, 20, 20);
                 textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0));
                 textView.setBackground(circleDrawable);
@@ -74,7 +75,7 @@ public class DefaultMarkView extends BaseMarkView {
 
                 this.addView(new PlaceHolderVertical(getContext()));
                 this.addView(textView);
-                this.addView(new Dot(getContext()));
+                this.addView(new Dot(getContext(), style.getColor()));
                 return;
             case MarkStyle.RIGHTSIDEBAR:
                 this.setLayoutParams(matchParentParams);
@@ -84,7 +85,7 @@ public class DefaultMarkView extends BaseMarkView {
                 this.addView(new PlaceHolderHorizontal(getContext()));
                 this.addView(textView);
                 PlaceHolderHorizontal barRight = new PlaceHolderHorizontal(getContext());
-                barRight.setBackgroundColor(MarkStyle.color);
+                barRight.setBackgroundColor(style.getColor());
                 this.addView(barRight);
                 return;
             case MarkStyle.LEFTSIDEBAR:
@@ -93,7 +94,7 @@ public class DefaultMarkView extends BaseMarkView {
                 textView.setLayoutParams(new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 3.0));
 
                 PlaceHolderHorizontal barLeft = new PlaceHolderHorizontal(getContext());
-                barLeft.setBackgroundColor(MarkStyle.color);
+                barLeft.setBackgroundColor(style.getColor());
                 this.addView(barLeft);
                 this.addView(textView);
                 this.addView(new PlaceHolderHorizontal(getContext()));
@@ -105,9 +106,9 @@ public class DefaultMarkView extends BaseMarkView {
     }
 
     @Override
-    public void setDisplayText(String text) {
-        initLayout();
-        textView.setText(text);
+    public void setDisplayText(DayData day) {
+        initLayoutWithStyle(day.getDate().getMarkStyle());
+        textView.setText(day.getText());
     }
 
     class PlaceHolderHorizontal extends View{
@@ -122,7 +123,6 @@ public class DefaultMarkView extends BaseMarkView {
         public PlaceHolderHorizontal(Context context, AttributeSet attrs) {
             super(context, attrs);
             params = new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 1.0);
-            this.setLayoutParams(params);
             this.setLayoutParams(params);
         }
     }
@@ -140,13 +140,12 @@ public class DefaultMarkView extends BaseMarkView {
             super(context, attrs);
             params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, (float) 1.0);
             this.setLayoutParams(params);
-            this.setLayoutParams(params);
         }
     }
 
     class Dot extends RelativeLayout{
 
-        public Dot(Context context) {
+        public Dot(Context context, int color) {
             super(context);
             this.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, (float) 1.0));
             View dotView = new View(getContext());
@@ -155,7 +154,7 @@ public class DefaultMarkView extends BaseMarkView {
             dotView.setLayoutParams(lp);
             ShapeDrawable dot = new ShapeDrawable(new OvalShape());
 
-            dot.getPaint().setColor(MarkStyle.color);
+            dot.getPaint().setColor(color);
             dotView.setBackground(dot);
             this.addView(dotView);
         }

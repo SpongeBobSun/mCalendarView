@@ -124,7 +124,7 @@ public class ExpCalendarView extends ViewPager {
 
     public ExpCalendarView setMarkedStyle(int style, int color) {
         MarkStyle.current = style;
-        MarkStyle.color = color;
+        MarkStyle.defaultColor = color;
         return this;
     }
 

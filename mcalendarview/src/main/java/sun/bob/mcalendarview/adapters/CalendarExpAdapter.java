@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
+import sun.bob.mcalendarview.MarkStyle;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.views.BaseCellView;
@@ -39,19 +40,22 @@ public class CalendarExpAdapter extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup viewGroup) {
         View ret = null;
         DayData dayData = (DayData) data.get(position);
-        if (MarkedDates.getInstance().check(dayData.getDate())) {
+        MarkStyle style = MarkedDates.getInstance().check(dayData.getDate());
+        boolean marked = style != null;
+        if (marked) {
+            dayData.getDate().setMarkStyle(style);
             if (markView > 0) {
                 BaseMarkView baseMarkView = (BaseMarkView) View.inflate(getContext(), markView, null);
-                baseMarkView.setDisplayText(dayData.getText());
+                baseMarkView.setDisplayText(dayData);
                 ret = baseMarkView;
             } else {
                 ret = new DefaultMarkView(getContext());
-                ((DefaultMarkView) ret).setDisplayText(dayData.getText());
+                ((DefaultMarkView) ret).setDisplayText(dayData);
             }
         } else {
             if (cellView > 0) {
                 BaseCellView baseCellView = (BaseCellView) View.inflate(getContext(), cellView, null);
-                baseCellView.setDisplayText(dayData.getText());
+                baseCellView.setDisplayText(dayData);
                 ret = baseCellView;
             } else {
                 ret = new ExpandCellView(getContext());

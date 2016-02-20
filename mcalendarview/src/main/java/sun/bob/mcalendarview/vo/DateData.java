@@ -1,5 +1,7 @@
 package sun.bob.mcalendarview.vo;
 
+import sun.bob.mcalendarview.MarkStyle;
+
 /**
  * Created by bob.sun on 15/8/27.
  */
@@ -9,6 +11,7 @@ public class DateData {
     private int day;
     private int hour;
     private int minute;
+    private MarkStyle markStyle;
 
     public DateData(int year, int month, int day){
         this.day = day;
@@ -16,6 +19,7 @@ public class DateData {
         this.year = year;
         this.hour = 0;
         this.minute = 0;
+        this.markStyle = new MarkStyle();
     }
 
     public int getYear() {
@@ -80,5 +84,19 @@ public class DateData {
     public boolean equals(Object o) {
         DateData data = (DateData) o;
         return  ((data.year == this.year) && (data.month == this.month) && (data.day == this.day));
+    }
+
+    public MarkStyle getMarkStyle() {
+        return markStyle;
+    }
+
+    public DateData setMarkStyle(MarkStyle markStyle) {
+        this.markStyle = markStyle;
+        return this;
+    }
+
+    public DateData setMarkStyle(int style, int color){
+        this.markStyle = new MarkStyle(style, color);
+        return this;
     }
 }

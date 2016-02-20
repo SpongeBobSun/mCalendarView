@@ -119,7 +119,7 @@ public class mCalendarView extends ViewPager {
 
     public mCalendarView setMarkedStyle(int style, int color){
         MarkStyle.current = style;
-        MarkStyle.color = color;
+        MarkStyle.defaultColor = color;
         return this;
     }
 
