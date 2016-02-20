@@ -63,10 +63,24 @@ By default, mCalendarView will display current month. If you what to jump to ano
 ###Mark / Highlight a Date
 Android's built-in widget dosen't have this feature, that's why I'm writing this widget.
 
-To mark / highlight a date, use `markDate(int year, int month, int day)` function in mCalendarView.
+There are two method in mCalendarViewClass to highlight a date.
+	
+* markDate(int year, int month, int day);
+* markDate(DateData date); 
+	
+To mark / highlight a date, use one of those two functions in mCalendarView.
+
+Below function will hightlight a date with default / global color and style.
 
 	mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
-	calendarView..markDate(2015, 10, 7);
+	calendarView.markDate(2015, 10, 7);
+	
+Below function will let you specify a customized hightlight style and color.
+
+	mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
+	calendarView.markDate(
+		new DateData(2016, 3, 1).setMarkStyle(new MarkStyle(MarkStyle.DOT, Color.GREEN)
+	);
 	
 ###Use built-in Mark Styles
 
@@ -85,14 +99,16 @@ mCalendarView provide below built-in mark styles. Mark styles are defined in cla
 
 		MarkStyle.RIGHTSIDEBAR
 		
-To specify a mark style, use `setMarkedStyle(int style)` function in mCalendarView.
+To specify the default / global highlight style, use `setMarkedStyle(int style)` function in mCalendarView.
 
 	mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
 	calendarView.setMarkedStyle(MarkStyle.BACKGROUND);
 	
-Default mark style is change background color.
+Default highlight style is change background color.
 
-To specify a mark style and mark color, use `setMarkedStyle(int style, int color)` function in mCalendarView.
+To specify the default / global highlight style and color, use `setMarkedStyle(int style, int color)` function in mCalendarView.
+
+To specify a highlight style and color for one day, use `setMarkStyle(MarkStyle markStyle)` function in DateData.
 
 You can get screenshots of each mark styles in `More ScreenShots` Section
 
@@ -202,6 +218,10 @@ For Expandabel calendar view.
 ###[oong](https://github.com/oong) & [Barry](https://github.com/fg2q1q3q)
 
 For bug fix.
+
+###[Rodrigo Arantes](https://github.com/rodriggoarantes)
+
+For WeekColumnView Translate in ExpCalendarView.
 
 #License
 Copyright 2015 Bob Sun
