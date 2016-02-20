@@ -2,6 +2,7 @@ package sun.bob.mcalendarview.utils;
 
 import android.util.Log;
 
+import java.text.DateFormatSymbols;
 import java.util.Calendar;
 
 import sun.bob.mcalendarview.CellConfig;
@@ -12,40 +13,21 @@ import sun.bob.mcalendarview.vo.DateData;
  */
 public class ExpCalendarUtil {
 
-    /**
-     * the number to Week
-     *
-     * @param number
-     * @return
+    /** ExpCalendarUtil.java
+     * The number to Week
+     * @param number - Number day of Week (on the code Sunday is equal 7)
+     * @return [String] - abbreviated name of the days of the week
      */
     public static String number2Week(int number) {
-        if (number < 1 || number > 7)
-            return null;
-        String result = null;
-        switch (number) {
-            case 1:
-                result = "一";
-                break;
-            case 2:
-                result = "二";
-                break;
-            case 3:
-                result = "三";
-                break;
-            case 4:
-                result = "四";
-                break;
-            case 5:
-                result = "五";
-                break;
-            case 6:
-                result = "六";
-                break;
-            case 7:
-                result = "日";
-                break;
+        if (number < 1 || number > 7) return null; //Day of Week 1-7
+        if (number == 7) {
+            number = 1;
+        } else {
+            number = number + 1;
         }
-        return result;
+        final DateFormatSymbols symbols = new DateFormatSymbols(); //use user locale
+        final String nameDayOfWeek = symbols.getShortWeekdays()[number]; //Short name or getWeekdays for complete name
+        return nameDayOfWeek.toUpperCase(); //name to uppercase
     }
 
     public static DateData position2Month(int absPos) {
