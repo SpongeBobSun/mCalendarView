@@ -12,8 +12,8 @@ import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.views.BaseCellView;
 import sun.bob.mcalendarview.views.BaseMarkView;
+import sun.bob.mcalendarview.views.DefaultCellView;
 import sun.bob.mcalendarview.views.DefaultMarkView;
-import sun.bob.mcalendarview.views.ExpandCellView;
 import sun.bob.mcalendarview.vo.DayData;
 import sun.bob.mcalendarview.vo.MarkedDates;
 
@@ -58,16 +58,18 @@ public class CalendarExpAdapter extends ArrayAdapter {
                 baseCellView.setDisplayText(dayData);
                 ret = baseCellView;
             } else {
-                ret = new ExpandCellView(getContext());
-                ((ExpandCellView) ret).setText_Color(dayData.getText(), dayData.getTextColor());
+                ret = new DefaultCellView(getContext());
+                ((DefaultCellView) ret).setTextColor(dayData.getText(), dayData.getTextColor());
             }
         }
         ((BaseCellView) ret).setDate(dayData.getDate());
         if (OnDateClickListener.instance != null) {
             ((BaseCellView) ret).setOnDateClickListener(OnDateClickListener.instance);
         }
-        if (dayData.getDate().equals(CurrentCalendar.getCurrentDateData())) {
-            ((ExpandCellView) ret).setDateToday();
+        if (dayData.getDate().equals(CurrentCalendar.getCurrentDateData()) &&
+                ret instanceof DefaultCellView) {
+            ((DefaultCellView) ret).setDateToday();
+
         }
         return ret;
     }

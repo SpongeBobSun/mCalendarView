@@ -13,7 +13,7 @@ import android.widget.Toast;
 import sun.bob.mcalendarview.MarkStyle;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
-import sun.bob.mcalendarview.mCalendarView;
+import sun.bob.mcalendarview.MCalendarView;
 import sun.bob.mcalendarview.vo.DateData;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //      Get instance.
-        final mCalendarView calendarView = ((mCalendarView) findViewById(R.id.calendar));
+        final MCalendarView calendarView = ((MCalendarView) findViewById(R.id.calendar));
 
 //      Set up listeners.
         calendarView.setOnDateClickListener(new OnDateClickListener() {

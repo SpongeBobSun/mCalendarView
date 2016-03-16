@@ -54,6 +54,38 @@ public class MarkStyle {
         }
     };
 
+    public static Drawable choose = new Drawable() {
+        private Paint paint;
+
+        {
+            paint = new Paint();
+            paint.setAntiAlias(true);
+            paint.setColor(Color.LTGRAY);
+        }
+        @Override
+        public void draw(Canvas canvas) {
+            canvas.drawCircle(canvas.getWidth() / 2,
+                    canvas.getHeight() / 2,
+                    canvas.getHeight() / 3,
+                    paint);
+        }
+
+        @Override
+        public void setAlpha(int alpha) {
+
+        }
+
+        @Override
+        public void setColorFilter(ColorFilter colorFilter) {
+
+        }
+
+        @Override
+        public int getOpacity() {
+            return 0;
+        }
+    };
+
     private int style;
     private int color;
 

@@ -43,6 +43,8 @@ public class ExpMainActivity extends AppCompatActivity {
         });
 
         imageInit();
+
+        expCalendarView.markDate(2016, 3, 16);
     }
 
     private boolean ifExpand = true;

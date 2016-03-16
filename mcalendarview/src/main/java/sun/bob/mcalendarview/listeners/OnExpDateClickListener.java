@@ -3,7 +3,7 @@ package sun.bob.mcalendarview.listeners;
 import android.view.View;
 
 import sun.bob.mcalendarview.utils.CurrentCalendar;
-import sun.bob.mcalendarview.views.ExpandCellView;
+import sun.bob.mcalendarview.views.DefaultCellView;
 import sun.bob.mcalendarview.vo.DateData;
 
 /**
@@ -22,7 +22,7 @@ public class OnExpDateClickListener extends OnDateClickListener {
     @Override
     public void onDateClick(View view, DateData date) {
 
-        if(view instanceof ExpandCellView) {
+        if(view instanceof DefaultCellView) {
 
             // 判断上次的点击
             if (lastClickedView != null) {
@@ -30,13 +30,13 @@ public class OnExpDateClickListener extends OnDateClickListener {
                 if (lastClickedView == view)
                     return;
                 if (lastClickedDate.equals(CurrentCalendar.getCurrentDateData())) {
-                    ((ExpandCellView) lastClickedView).setDateToday();
+                    ((DefaultCellView) lastClickedView).setDateToday();
                 } else {
-                    ((ExpandCellView) lastClickedView).setDateNormal();
+                    ((DefaultCellView) lastClickedView).setDateNormal();
                 }
             }
             // 判断这次的点击
-            ((ExpandCellView) view).setDateChoose();
+            ((DefaultCellView) view).setDateChoose();
             lastClickedView = view;
             lastClickedDate = date;
         }

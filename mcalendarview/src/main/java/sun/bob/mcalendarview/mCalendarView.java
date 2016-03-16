@@ -21,7 +21,7 @@ import sun.bob.mcalendarview.vo.MarkedDates;
 /**
  * Created by bob.sun on 15/8/27.
  */
-public class mCalendarView extends ViewPager {
+public class MCalendarView extends ViewPager {
     private int dateCellViewResId = -1;
     private View dateCellView = null;
     private int markedStyle = -1;
@@ -37,14 +37,14 @@ public class mCalendarView extends ViewPager {
     private int width, height;
     private int currentIndex;
 
-    public mCalendarView(Context context) {
+    public MCalendarView(Context context) {
         super(context);
         if (context instanceof FragmentActivity){
             init((FragmentActivity) context);
         }
     }
 
-    public mCalendarView(Context context, AttributeSet attrs) {
+    public MCalendarView(Context context, AttributeSet attrs) {
         super(context, attrs);
         if (context instanceof FragmentActivity){
             init((FragmentActivity) context);
@@ -80,7 +80,7 @@ public class mCalendarView extends ViewPager {
     }
 
     //// TODO: 15/8/28 May cause trouble when invoked after inited
-    public mCalendarView travelTo(DateData dateData){
+    public MCalendarView travelTo(DateData dateData){
         this.currentDate = dateData;
         CalendarUtil.date = dateData;
         this.initted = false;
@@ -88,22 +88,22 @@ public class mCalendarView extends ViewPager {
         return this;
     }
 
-    public mCalendarView markDate(int year, int month, int day){
+    public MCalendarView markDate(int year, int month, int day){
         MarkedDates.getInstance().add(new DateData(year, month, day));
         return this;
     }
 
-    public mCalendarView unMarkDate(int year, int month, int day){
+    public MCalendarView unMarkDate(int year, int month, int day){
         MarkedDates.getInstance().remove(new DateData(year, month, day));
         return this;
     }
 
-    public mCalendarView markDate(DateData date){
+    public MCalendarView markDate(DateData date){
         MarkedDates.getInstance().add(date);
         return this;
     }
 
-    public mCalendarView unMarkDate(DateData date){
+    public MCalendarView unMarkDate(DateData date){
         MarkedDates.getInstance().remove(date);
         return this;
     }
@@ -112,38 +112,38 @@ public class mCalendarView extends ViewPager {
         return MarkedDates.getInstance();
     }
 
-    public mCalendarView setDateCell(int resId){
+    public MCalendarView setDateCell(int resId){
         adapter.setDateCellId(resId);
         return this;
     }
 
-    public mCalendarView setMarkedStyle(int style, int color){
+    public MCalendarView setMarkedStyle(int style, int color){
         MarkStyle.current = style;
         MarkStyle.defaultColor = color;
         return this;
     }
 
-    public mCalendarView setMarkedStyle(int style){
+    public MCalendarView setMarkedStyle(int style){
         MarkStyle.current = style;
         return this;
     }
 
-    public mCalendarView setMarkedCell(int resId) {
+    public MCalendarView setMarkedCell(int resId) {
         adapter.setMarkCellId(resId);
         return this;
     }
 
-    public mCalendarView setOnMonthChangeListener(OnMonthChangeListener listener){
+    public MCalendarView setOnMonthChangeListener(OnMonthChangeListener listener){
         this.addOnPageChangeListener(listener);
         return this;
     }
 
-    public mCalendarView setOnDateClickListener(OnDateClickListener onDateClickListener){
+    public MCalendarView setOnDateClickListener(OnDateClickListener onDateClickListener){
         OnDateClickListener.instance = onDateClickListener;
         return this;
     }
 
-    public mCalendarView hasTitle(boolean hasTitle){
+    public MCalendarView hasTitle(boolean hasTitle){
         this.hasTitle = hasTitle;
         adapter.setTitle(hasTitle);
         return this;

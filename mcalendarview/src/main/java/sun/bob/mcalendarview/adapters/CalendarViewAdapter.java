@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 
 import sun.bob.mcalendarview.fragments.MonthFragment;
-import sun.bob.mcalendarview.mCalendarView;
+import sun.bob.mcalendarview.MCalendarView;
 import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MonthData;
@@ -75,6 +75,6 @@ public class CalendarViewAdapter extends FragmentStatePagerAdapter {
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object) {
         super.setPrimaryItem(container, position, object);
-        ((mCalendarView) container).measureCurrentView(position);
+        ((MCalendarView) container).measureCurrentView(position);
     }
 }
