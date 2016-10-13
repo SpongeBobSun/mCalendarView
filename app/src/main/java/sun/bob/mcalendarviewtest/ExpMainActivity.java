@@ -56,13 +56,13 @@ public class ExpMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ifExpand) {
-                    CellConfig.Month2WeekPos = CellConfig.middlePosition ;
-                    CellConfig.ifMonth = false ;
+                    CellConfig.Month2WeekPos = CellConfig.middlePosition;
+                    CellConfig.ifMonth = false;
                     expandIV.setImageResource(R.mipmap.icon_arrow_down);
                     expCalendarView.shrink();
                 } else {
-                    CellConfig.Week2MonthPos = CellConfig.middlePosition ;
-                    CellConfig.ifMonth = true ;
+                    CellConfig.Week2MonthPos = CellConfig.middlePosition;
+                    CellConfig.ifMonth = true;
                     expandIV.setImageResource(R.mipmap.icon_arrow_up);
                     expCalendarView.expand();
                 }
@@ -70,7 +70,8 @@ public class ExpMainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void TravelToClick(View v) {
-         expCalendarView.travelTo(new DateData(1980, 11, 14));
-   }
+        expCalendarView.travelTo(new DateData(1980, 11, 14));
+    }
 }

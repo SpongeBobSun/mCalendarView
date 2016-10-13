@@ -3,4 +3,5 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="activity_exp">ExpCalendarAct</string>
+    <string name="activity_tab">TabActivity</string>
 </resources>

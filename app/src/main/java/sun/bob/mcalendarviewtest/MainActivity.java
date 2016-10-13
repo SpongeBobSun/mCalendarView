@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, ExpMainActivity.class));
             return true;
+        } else if(id == R.id.action_tab_act) {
+            startActivity(new Intent(this, TabActivity.class));
+            return true ;
         }
 
         return super.onOptionsItemSelected(item);

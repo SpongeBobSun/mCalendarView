@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ExpMainActivity"/>
+        <activity android:name="sun.bob.mcalendarviewtest.ExpMainActivity"/>
+        <activity android:name="sun.bob.mcalendarviewtest.TabActivity"/>
     </application>
 
 </manifest>

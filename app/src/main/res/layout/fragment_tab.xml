@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tab_activity_page_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#0088ff"
+        android:paddingLeft="24dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#fff" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        layout="@layout/exp_main_activity"
+        android:visibility="gone" />
+
+    <sun.bob.mcalendarview.MCalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        tools:context=".issues.TabActivity" />
+
+
+</LinearLayout>
