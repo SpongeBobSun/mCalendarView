@@ -4,7 +4,10 @@ import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+
+import java.util.Calendar;
 
 import sun.bob.mcalendarview.CellConfig;
 import sun.bob.mcalendarview.MarkStyle;
@@ -13,7 +16,6 @@ import sun.bob.mcalendarview.adapters.CalendarViewExpAdapter;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.listeners.OnMonthScrollListener;
-import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MarkedDates;
@@ -76,11 +78,27 @@ public class ExpCalendarView extends ViewPager {
     }
 
     //// TODO: 15/8/28 May cause trouble when invoked after inited
-    public ExpCalendarView travelTo(DateData dateData) {
-        this.currentDate = dateData;
-        CalendarUtil.date = dateData;
-        this.initted = false;
-        init((FragmentActivity) getContext());
+    public ExpCalendarView travelTo(DateData dateData) {// 获得当前页面的年月（position=500）
+        Calendar calendar = Calendar.getInstance();
+        int thisYear = calendar.get(Calendar.YEAR);
+        int thisMonth = calendar.get(Calendar.MONTH);
+        // 计算绝对position
+        int realPosition = 500 + (dateData.getYear() - thisYear) * 12 + (dateData.getMonth() - thisMonth - 1);
+        if (realPosition > 1000 || realPosition < 0)
+            throw new RuntimeException("Please travelto a right date: today-500~today~today+500");
+
+        // 来个步进滑动？因为一次滑个几百页，界面有时候不刷新（蛋疼）
+        for (int i = getCurrentItem(); i < realPosition; i=i+50) {
+            setCurrentItem(i);
+            Log.i("step", " "+i);
+        }
+        for (int i = getCurrentItem(); i > realPosition; i=i-50) {
+            setCurrentItem(i);
+            Log.i("step", " "+i);
+        }
+        setCurrentItem(realPosition);
+        // 标记
+        MarkedDates.getInstance().add(dateData);
         return this;
     }
 
