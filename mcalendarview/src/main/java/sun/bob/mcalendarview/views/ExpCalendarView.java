@@ -6,7 +6,9 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 
+import android.util.Log;
 import sun.bob.mcalendarview.CellConfig;
+import java.util.Calendar;
 import sun.bob.mcalendarview.MarkStyle;
 import sun.bob.mcalendarview.R;
 import sun.bob.mcalendarview.adapters.CalendarViewExpAdapter;
@@ -77,13 +79,28 @@ public class ExpCalendarView extends ViewPager {
 
     //// TODO: 15/8/28 May cause trouble when invoked after inited
     public ExpCalendarView travelTo(DateData dateData) {
-        this.currentDate = dateData;
-        CalendarUtil.date = dateData;
-        this.initted = false;
-        init((FragmentActivity) getContext());
-        return this;
-    }
+        // 获得当前页面的年月（position=500）
+        Calendar calendar = Calendar.getInstance();
+        int thisYear = calendar.get(Calendar.YEAR);
+        int thisMonth = calendar.get(Calendar.MONTH);
+         int realPosition = 500 + (dateData.getYear() - thisYear) * 12 + (dateData.getMonth() - thisMonth - 1);
+         if (realPosition > 1000 || realPosition < 0)
+             throw new RuntimeException("Please travelto a right date: today-500~today~today+500");
 
+         // 来个步进滑动？因为一次滑个几百页，界面有时候不刷新（蛋疼）
+         for (int i = getCurrentItem(); i < realPosition; i=i+50) {
+             setCurrentItem(i);
+             Log.i("step", " "+i);
+         }
+         for (int i = getCurrentItem(); i > realPosition; i=i-50) {
+             setCurrentItem(i);
+             Log.i("step", " "+i);
+         }
+         setCurrentItem(realPosition);
+         // 标记
+         MarkedDates.getInstance().add(dateData);
+          return this;
+    }
     public void expand() {
         adapter.notifyDataSetChanged();
     }

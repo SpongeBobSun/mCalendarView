@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f0f0f0"
-    tools:context="sun.bob.mcalendarviewtest.MainActivityExp">
+    tools:context="sun.bob.mcalendarviewtest.ExpMainActivityExp">
 
 
     <TextView
@@ -45,6 +45,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:src="@mipmap/icon_arrow_up" />
-
+    <Button
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="9dp"
+         android:layout_marginRight="9dp"
+         android:layout_marginTop="12dp"
+         android:background="#a677bd"
+         android:onClick="TravelToClick"
+         android:text="travelto test"
+         android:textColor="@android:color/white" />
 
 </LinearLayout>

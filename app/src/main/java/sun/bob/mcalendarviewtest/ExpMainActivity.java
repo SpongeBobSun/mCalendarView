@@ -12,6 +12,7 @@ import sun.bob.mcalendarview.CellConfig;
 import sun.bob.mcalendarview.listeners.OnExpDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthScrollListener;
 import sun.bob.mcalendarview.views.ExpCalendarView;
+import sun.bob.mcalendarview.vo.DateData;
 
 
 public class ExpMainActivity extends AppCompatActivity {
@@ -44,7 +45,7 @@ public class ExpMainActivity extends AppCompatActivity {
 
         imageInit();
 
-        expCalendarView.markDate(2016, 3, 16);
+        expCalendarView.markDate(2016, 10, 16);
     }
 
     private boolean ifExpand = true;
@@ -69,5 +70,7 @@ public class ExpMainActivity extends AppCompatActivity {
             }
         });
     }
-
+    public void TravelToClick(View v) {
+         expCalendarView.travelTo(new DateData(1980, 11, 14));
+   }
 }
