@@ -32,7 +32,10 @@ public class MarkedDates extends Observable {
     }
 
     public boolean remove(DateData date){
+        this.setChanged();
+        this.notifyObservers();
         return data.remove(date);
+
     }
 
     public MarkedDates add(DateData dateData){
@@ -49,6 +52,8 @@ public class MarkedDates extends Observable {
 
     public MarkedDates removeAdd(){
         data.clear();
+        this.setChanged();
+        this.notifyObservers();
         return this;
     }
 }
