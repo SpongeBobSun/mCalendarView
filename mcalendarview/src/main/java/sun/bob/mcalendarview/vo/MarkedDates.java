@@ -38,8 +38,10 @@ public class MarkedDates extends Observable {
     public MarkedDates add(DateData dateData){
         data.add(dateData);
         this.setChanged();
+        this.notifyObservers();
         return this;
     }
+
 
     public ArrayList<DateData> getAll(){
         return data;
