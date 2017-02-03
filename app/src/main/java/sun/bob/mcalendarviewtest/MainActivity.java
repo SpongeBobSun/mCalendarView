@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         final MCalendarView calendarView = ((MCalendarView) findViewById(R.id.calendar));
 
 //      Set up listeners.
+        calendarView.travelTo(new DateData(2016, 11, 1));
         calendarView.setOnDateClickListener(new OnDateClickListener() {
             @Override
             public void onDateClick(View view, DateData date) {
