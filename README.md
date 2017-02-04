@@ -32,6 +32,15 @@ I used Android built-in `screenrecord` command to get the screenshot. But for so
 ![Alt ](./screenshot/exp.gif)
 ##Usage
 
+###Download
+Add dependency to your `build.gradle`
+
+    ```
+    dependencies {
+        compile 'sun.bob:mcalendarview:1.0.0'
+    }
+    ```
+
 ###Add to Layout
 To use mCalendarView, you need to add it in layout by using xml file or Java code. 
 
