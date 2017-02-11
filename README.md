@@ -232,6 +232,11 @@ For bug fix.
 
 For WeekColumnView Translate in ExpCalendarView.
 
+# APPs which using mCalendarView
+###[Natural Family Planning (NFP)](https://play.google.com/store/apps/details?id=com.projectcaruso.naturalfamilyplaning&hl=en)
+
+###[BeSAFE](https://play.google.com/store/apps/details?id=aman.sow.apps.besafe&hl=en)
+
 #License
 Copyright 2015 Bob Sun
 
