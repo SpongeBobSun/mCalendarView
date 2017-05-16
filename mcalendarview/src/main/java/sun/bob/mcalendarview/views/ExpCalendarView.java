@@ -130,6 +130,7 @@ public class ExpCalendarView extends ViewPager {
         return this;
     }
     
+    //remove all / Clear Data
     public ExpCalendarView removeAdd() {
         MarkedDates.getInstance().removeAdd();
         return this;
