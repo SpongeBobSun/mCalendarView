@@ -129,6 +129,11 @@ public class ExpCalendarView extends ViewPager {
         MarkedDates.getInstance().remove(date);
         return this;
     }
+    
+    public ExpCalendarView removeAdd() {
+        MarkedDates.getInstance().removeAdd();
+        return this;
+    }
 
     public MarkedDates getMarkedDates() {
         return MarkedDates.getInstance();
