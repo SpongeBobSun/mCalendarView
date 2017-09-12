@@ -22,4 +22,6 @@ public class CellConfig {
     // 所以分成了两个
     public static DateData w2mPointDate;
     public static DateData m2wPointDate;
+
+    public static DateData weekAnchorPointDate;
 }

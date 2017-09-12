@@ -7,8 +7,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import sun.bob.mcalendarview.CellConfig;
+import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnExpDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthScrollListener;
 import sun.bob.mcalendarview.views.ExpCalendarView;
@@ -19,6 +21,7 @@ public class ExpMainActivity extends AppCompatActivity {
 
     private TextView YearMonthTv;
     private ExpCalendarView expCalendarView;
+    private DateData selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +46,20 @@ public class ExpMainActivity extends AppCompatActivity {
             }
         });
 
+        expCalendarView.setOnDateClickListener(new OnDateClickListener() {
+            @Override
+            public void onDateClick(View view, DateData date) {
+                expCalendarView.getMarkedDates().removeAdd();
+                expCalendarView.markDate(date);
+                selectedDate = date;
+            }
+        });
+
         imageInit();
 
-        expCalendarView.markDate(2016, 10, 16);
+        Calendar calendar = Calendar.getInstance();
+        selectedDate = new DateData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+        expCalendarView.markDate(selectedDate);
     }
 
     private boolean ifExpand = true;
@@ -59,6 +73,7 @@ public class ExpMainActivity extends AppCompatActivity {
                     CellConfig.Month2WeekPos = CellConfig.middlePosition;
                     CellConfig.ifMonth = false;
                     expandIV.setImageResource(R.mipmap.icon_arrow_down);
+                    CellConfig.weekAnchorPointDate = selectedDate;
                     expCalendarView.shrink();
                 } else {
                     CellConfig.Week2MonthPos = CellConfig.middlePosition;
