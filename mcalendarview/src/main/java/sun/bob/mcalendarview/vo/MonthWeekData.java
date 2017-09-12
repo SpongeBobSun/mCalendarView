@@ -52,7 +52,7 @@ public class MonthWeekData {
 
     private void getPointDate() {
         // 获得收缩后的那个point
-        calendar.set(CellConfig.w2mPointDate.getYear(), CellConfig.w2mPointDate.getMonth() - 1, 1);
+        calendar.set(CellConfig.w2mPointDate.getYear(), CellConfig.w2mPointDate.getMonth() - 1, CellConfig.w2mPointDate.getDay());
         // 获得周的相对滑动的页面差
         int distance = CellConfig.Week2MonthPos - CellConfig.Month2WeekPos;
         calendar.add(Calendar.DATE, distance * 7);
