@@ -1,6 +1,7 @@
 package sun.bob.mcalendarview.vo;
 
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -30,11 +31,15 @@ public class MonthWeekData {
     public MonthWeekData(int position) {
         realPosition = position;
         calendar = Calendar.getInstance();
+        DateData today = new DateData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
         if (CellConfig.m2wPointDate == null) {
-            CellConfig.m2wPointDate = new DateData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+            CellConfig.m2wPointDate = today;
         }
         if (CellConfig.w2mPointDate == null) {
-            CellConfig.w2mPointDate = new DateData(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+            CellConfig.w2mPointDate = today;
+        }
+        if (CellConfig.weekAnchorPointDate == null) {
+            CellConfig.weekAnchorPointDate = today;
         }
 
         if (CellConfig.ifMonth) {
@@ -47,7 +52,7 @@ public class MonthWeekData {
 
     private void getPointDate() {
         // 获得收缩后的那个point
-        calendar.set(CellConfig.w2mPointDate.getYear(), CellConfig.w2mPointDate.getMonth() - 1, 1);
+        calendar.set(CellConfig.w2mPointDate.getYear(), CellConfig.w2mPointDate.getMonth() - 1, CellConfig.w2mPointDate.getDay());
         // 获得周的相对滑动的页面差
         int distance = CellConfig.Week2MonthPos - CellConfig.Month2WeekPos;
         calendar.add(Calendar.DATE, distance * 7);
@@ -138,7 +143,7 @@ public class MonthWeekData {
             calendar.add(Calendar.MONTH, distance);
         }
         // 如果是今天的月份，则锚点的日期为今天； 如果不是今天的月份，则锚点的日期为1号
-        calendar.set(Calendar.DAY_OF_MONTH, ifThisMonth());
+        calendar.set(Calendar.DAY_OF_MONTH, getAnchorDayOfMonth(CellConfig.weekAnchorPointDate));
 ///////////////////////////////////////////////////////////////////////////////////////////
         // 下面是：获得该页的锚点后，判断三页显示的内容，中间和两边页显示不同
         if (realPosition == CellConfig.Month2WeekPos) {
@@ -164,16 +169,20 @@ public class MonthWeekData {
         }
     }
 
-    private int ifThisMonth() {
+    private int getAnchorDayOfMonth(DateData date) {
         int thisMonth = Calendar.getInstance().get(Calendar.MONTH);
-//        Log.e("","================================");
-//        Log.e("",calendar.get(Calendar.MONTH)+" "+thisMonth);
-//        Log.e("","================================");
-        if (calendar.get(Calendar.MONTH) == thisMonth) {
-            return Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        } else {
-            return 1;
+        int month = date.getMonth() - 1;
+        int selectedMonth = calendar.get(Calendar.MONTH);
+        if (selectedMonth == month && calendar.get(Calendar.YEAR) == date.getYear()) {
+            return date.getDay();
         }
+
+        if (selectedMonth == thisMonth && month != thisMonth) {
+            Calendar calendar = Calendar.getInstance();
+            return calendar.get(Calendar.DAY_OF_MONTH);
+        }
+
+        return 1;
     }
 
     public ArrayList getData() {
