@@ -5,7 +5,7 @@ import android.graphics.Color;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import sun.bob.mcalendarview.R;
+import sun.bob.mcalendarview.utils.MathTools;
 
 /**
  * Created by bob.sun on 15/8/27.
@@ -13,7 +13,6 @@ import sun.bob.mcalendarview.R;
 public class MonthData {
     private DateData date;
     private Calendar calendar;
-
     private int startDay, totalDay, lastMonth, lastMonthTotalDay;
 
     private ArrayList<DayData> content;
@@ -49,9 +48,10 @@ public class MonthData {
     }
 
     private void initArray(){
+        int firstDayOfTheWeek = calendar.getFirstDayOfWeek();
         if (hasTitle){
             for (int i = 0;i < 7;i++){
-                content.add(new TitleData(new DateData(0,0,i+1)));
+                content.add(new TitleData(new DateData(0,0, MathTools.floorMod(i+firstDayOfTheWeek,7))));
             }
         }
         DayData addDate;
@@ -59,7 +59,7 @@ public class MonthData {
             if(i < startDay) {
                 addDate = new DayData(new DateData(date.getYear(),
                                                     lastMonth,
-                                                    lastMonthTotalDay - (startDay- i)+1));
+                                                    lastMonthTotalDay - (startDay- i)+firstDayOfTheWeek));
                 addDate.setTextColor(Color.GRAY);
                 addDate.setTextSize(0);
                 content.add(addDate);
@@ -75,7 +75,7 @@ public class MonthData {
 
                 addDate = new DayData(new DateData(nextYear,
                                                     nextMonth,
-                                                    i - totalDay + 1));
+                                                    i - totalDay + firstDayOfTheWeek));
                 addDate.setTextColor(Color.GRAY);
                 addDate.setTextSize(0);
                 content.add(addDate);
@@ -85,7 +85,7 @@ public class MonthData {
             }
             addDate = new DayData(new DateData(date.getYear(),
                                     date.getMonth(),
-                                    i + 1 - startDay));
+                                    i + firstDayOfTheWeek - startDay));
             addDate.setTextColor(Color.BLACK);
             addDate.setTextSize(1);
             content.add(addDate);
