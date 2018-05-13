@@ -1,38 +1,49 @@
 package sun.bob.mcalendarview.vo;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * Created by bob.sun on 15/8/27.
  */
-public class TitleData extends DayData{
+public class TitleData extends DayData {
     private String title;
     private boolean isTitle;
+    Calendar cal = Calendar.getInstance();
+
     public TitleData(DateData dayData) {
         super(dayData);
         isTitle = true;
-        switch (dayData.getDay()){
+        switch (dayData.getDay()) {
             case 1:
-                setTitle("Sun");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
                 break;
             case 2:
-                setTitle("Mon");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
                 break;
             case 3:
-                setTitle("Tue");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.TUESDAY);
                 break;
             case 4:
-                setTitle("Wed");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY);
                 break;
             case 5:
-                setTitle("Thu");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.THURSDAY);
                 break;
             case 6:
-                setTitle("Fri");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY);
                 break;
             case 7:
-                setTitle("Sat");
+                cal.set(Calendar.DAY_OF_WEEK, Calendar.SATURDAY);
                 break;
             default:
                 break;
+        }
+
+        String dayValue = new SimpleDateFormat("EEE").format(new java.util.Date(cal.getTimeInMillis())).replaceAll("\\.", "");
+        if (dayValue.length() > 1) {
+            String DayValueUpperCased = dayValue.substring(0, 1).toUpperCase() + dayValue.substring(1);
+            setTitle(DayValueUpperCased);
         }
     }
 
