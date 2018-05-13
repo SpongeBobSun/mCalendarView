@@ -5,7 +5,7 @@ import android.graphics.Color;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import sun.bob.mcalendarview.R;
+import sun.bob.mcalendarview.utils.MathTools;
 
 /**
  * Created by bob.sun on 15/8/27.
@@ -13,7 +13,6 @@ import sun.bob.mcalendarview.R;
 public class MonthData {
     private DateData date;
     private Calendar calendar;
-
     private int startDay, totalDay, lastMonth, lastMonthTotalDay;
 
     private ArrayList<DayData> content;
@@ -34,7 +33,8 @@ public class MonthData {
         tmpCal.clear();
         tmpCal.set(date.getYear(), date.getMonth() - 1, 1);
         totalDay = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-        startDay = tmpCal.get(Calendar.DAY_OF_WEEK) - 1;
+        int firstDayOfTheWeek = calendar.getFirstDayOfWeek();
+        startDay = MathTools.floorMod(tmpCal.get(Calendar.DAY_OF_WEEK) - firstDayOfTheWeek,7);
         totalDay = totalDay + startDay;
         if(date.getMonth() - 1 > 0) {
             lastMonth = date.getMonth() - 2;
@@ -49,9 +49,10 @@ public class MonthData {
     }
 
     private void initArray(){
+        int firstDayOfTheWeek = calendar.getFirstDayOfWeek();
         if (hasTitle){
             for (int i = 0;i < 7;i++){
-                content.add(new TitleData(new DateData(0,0,i+1)));
+                content.add(new TitleData(new DateData(0,0, MathTools.floorMod(i+firstDayOfTheWeek,7))));
             }
         }
         DayData addDate;
