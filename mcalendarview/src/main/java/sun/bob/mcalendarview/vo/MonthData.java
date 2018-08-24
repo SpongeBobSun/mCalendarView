@@ -52,7 +52,10 @@ public class MonthData {
         int firstDayOfTheWeek = calendar.getFirstDayOfWeek();
         if (hasTitle){
             for (int i = 0;i < 7;i++){
-                content.add(new TitleData(new DateData(0,0, MathTools.floorMod(i+firstDayOfTheWeek,7))));
+                int day = MathTools.floorMod(i + firstDayOfTheWeek, 7);
+                if (day == 0)
+                    day = 7;
+                content.add(new TitleData(new DateData(0, 0, day)));
             }
         }
         DayData addDate;
