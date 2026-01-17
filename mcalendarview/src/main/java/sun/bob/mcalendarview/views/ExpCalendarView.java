@@ -1,8 +1,8 @@
 package sun.bob.mcalendarview.views;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -15,7 +15,6 @@ import sun.bob.mcalendarview.adapters.CalendarViewExpAdapter;
 import sun.bob.mcalendarview.listeners.OnDateClickListener;
 import sun.bob.mcalendarview.listeners.OnMonthChangeListener;
 import sun.bob.mcalendarview.listeners.OnMonthScrollListener;
-import sun.bob.mcalendarview.utils.CalendarUtil;
 import sun.bob.mcalendarview.utils.CurrentCalendar;
 import sun.bob.mcalendarview.vo.DateData;
 import sun.bob.mcalendarview.vo.MarkedDates;

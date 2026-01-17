@@ -1,3 +1,16 @@
+2026 Revival / AndroidX Migration
+Maintained by Skyraidr
+
+This is a modernized fork of the original mCalendarView.
+
+Migrated: Updated all Support Library dependencies to AndroidX.
+
+Fixed: Removed deprecated JCenter/Bintray upload scripts.
+
+Compatible: Verified working on Android Studio Ladybug/Meerkat (API 34+).
+
+Use this fork if you need this library in a modern Android project.
+
 # mCalendarView
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-mCalendarView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2420)
 
